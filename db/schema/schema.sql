@@ -16,7 +16,8 @@ CREATE TABLE quizzes(
 
 CREATE TABLE questions (
   id SERIAL PRIMARY KEY NOT NULL,
-  question_string TEXT NOT NULL,
+  quiz_id INTEGER REFERENCES quizzes(id) ON DELETE CASCADE,
+  question_string TEXT NOT NULL
 );
 
 CREATE TABLE options (
