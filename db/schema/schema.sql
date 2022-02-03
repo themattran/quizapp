@@ -10,7 +10,7 @@ CREATE TABLE users(
 
 CREATE TABLE quizzes(
   id SERIAL PRIMARY KEY NOT NULL,
-  title VARCHAR(255),
+  name VARCHAR(255),
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
 );
 
