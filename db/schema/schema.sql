@@ -17,11 +17,11 @@ CREATE TABLE quizzes(
 CREATE TABLE questions (
   id SERIAL PRIMARY KEY NOT NULL,
   question_string TEXT NOT NULL,
-  correct_option_id INTEGER NOT NULL
 );
 
 CREATE TABLE options (
   id SERIAL PRIMARY KEY NOT NULL,
   question_id INTEGER REFERENCES questions(id) ON DELETE CASCADE,
-  content TEXT NOT NULL
+  content TEXT NOT NULL,
+  is_correct BOOLEAN
 );
