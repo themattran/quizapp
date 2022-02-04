@@ -1,0 +1,43 @@
+{
+  "name": "second quiz",
+  "questions": [
+    {
+      "question_string": "who is president in Ukraine?",
+      "options": [
+        {
+          "content": "Volodymyr Zelensky",
+          "is_correct": true
+        },
+        {
+          "content": "Joe Biden",
+          "is_correct": false
+        },
+        {
+          "content": "Vladimir Putin",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "question_string": "who is president in the US?",
+      "options": [
+        {
+          "content": "Volodymyr Zelensky",
+          "is_correct": false
+        },
+        {
+          "content": "Donald Trump",
+          "is_correct": false
+        },
+        {
+          "content": "Joe Biden",
+          "is_correct": true
+        },
+        {
+          "content": "Vladimir Putin",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}
