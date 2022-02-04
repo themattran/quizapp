@@ -9,10 +9,11 @@ const express = require('express');
 const router  = express.Router();
 
 module.exports = (db) => {
+
   router.get("/", (req, res) => {
     db.query(`SELECT * FROM users;`)
-      .then(data => {
-        const users = data.rows;
+      .then(res => {
+        const users = res.rows;
         res.json({ users });
       })
       .catch(err => {
@@ -21,5 +22,27 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+
+  router.post("/:user_id/createquiz", (req, res) => {
+
+    let queryString = `
+    INSERT INTO quizzes (name, user_id)
+    VALUES ($1, $2);`
+    let values = [req.body.name, req.params.user_id];
+
+    db.query(queryString, values)
+    .then(res => {
+      const users = res.rows;
+      return users
+    })
+    .catch(err => {
+      res
+      .status(500)
+      .json({ error: err.message });
+    });
+  });
+  
   return router;
 };
+
+

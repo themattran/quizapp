@@ -23,5 +23,24 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+
+  router.post("/", (req, res) => {
+    let query = `SELECT * FROM quizzes`;
+    
+    console.log(query);
+    db.query(query)
+      .then(data => {
+        const quizzes = data.rows;
+        res.json({ quizzes });
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
+
   return router;
+
+
 };
