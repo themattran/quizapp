@@ -7,7 +7,8 @@
 
 const express = require('express');
 const router  = express.Router();
-const quizModule = require('../modules/quizModule');
+const storeQuiz = require('../modules/storeQuiz');
+const retrieveQuiz = require('../modules/retrieveQuiz');
 
 module.exports = (db) => {
   //Get all quizzes
@@ -28,28 +29,20 @@ module.exports = (db) => {
 
   //Get one quiz (Matt)
   router.get("/:id", (req, res) => {
-    let query = `SELECT * FROM quizzes`;
-    console.log(query);
-    db.query(query)
-      .then(data => {
-        const quizzes = data.rows;
-        res.json({ quizzes });
-      })
-      .catch(err => {
-        res
-          .status(500)
-          .json({ error: err.message });
-      });
+    retrieveQuiz(db, req.params.id).then(quizObject => {
+      res.json(quizObject);
+    }).catch(err => {
+      res.status(500).json({error: err.message});
+    });
   });
 
   //Store a new quiz (Johannes)
   router.post("/", express.json(), (req, res) => {
-    quizModule.storeQuiz(db, 1, req.body).then(quizRecord => {
+    storeQuiz(db, 1, req.body).then(quizRecord => {
       res.json(quizRecord);
     }).catch(err => {
       res.status(500).json({error: err.message});
     });
-
   });
 
   return router;

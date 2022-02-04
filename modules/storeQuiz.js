@@ -144,19 +144,19 @@ const storeOptionRecord = (db, questionId, option) => {
 const storeQuestion = (db, quizId, question) => {
   return new Promise ((resolve, reject) => {
     storeQuestionRecord(db, quizId, question)
-    .then(questionRecord => {
-      console.log("Stored Question Record for: ", questionRecord.question_string);
-      const promises = [];
+      .then(questionRecord => {
+        console.log("Stored Question Record for: ", questionRecord.question_string);
+        const promises = [];
 
-      for (option of question.options) {
-        promises.push(storeOptionRecord(db, questionRecord.id, option));
-      }
+        for (option of question.options) {
+          promises.push(storeOptionRecord(db, questionRecord.id, option));
+        }
 
-      Promise.all(promises).then(() => {
-        console.log(`All option for question ${questionRecord.id} stored.`);
+        Promise.all(promises).then(() => {
+          console.log(`All option for question ${questionRecord.id} stored.`);
+        });
+
       });
-
-    });
   });
 }
 
@@ -196,20 +196,16 @@ const storeQuiz = (db, userId, quiz) => {
   */
   return new Promise ((resolve, reject) => {
     storeQuizRecord(db, userId, quiz)
-    .then(quizRecord => {
-      console.log("Stored Quiz Record for:", quizRecord.name);
-      storeQuestions(db, quizRecord.id, quiz.questions);
-    })
-    .then(questionRecords => {
-      console.log("Stored all questions");
-      resolve();
-    });
-
+      .then(quizRecord => {
+        console.log("Stored Quiz Record for:", quizRecord.name);
+        storeQuestions(db, quizRecord.id, quiz.questions);
+      })
+      .then(questionRecords => {
+        console.log("Stored all questions");
+        resolve();
+      });
   });
 
 };
 
-module.exports = {
-  retrieveQuiz,
-  storeQuiz,
-};
+module.exports = storeQuiz;
