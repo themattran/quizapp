@@ -71,6 +71,12 @@ const retrieveQuizRecord = (db, quizId) => {
   });
 };
 
+/**
+ * Retrieves the question records for a quiz
+ * @param {*} db The database driver reference
+ * @param {*} quizId The ID of the quiz to retrieve the questions for
+ * @returns a promise to the question records
+ */
 const retrieveQuestionRecords = (db, quizId) => {
   return new Promise((resolve, reject) => {
 
@@ -89,6 +95,12 @@ const retrieveQuestionRecords = (db, quizId) => {
   });
 };
 
+/**
+ * Retrieves the option records for a single question
+ * @param {object} db The database driver reference
+ * @param {integer} questionId The ID of the question to retrieve the options for
+ * @returns a promise to the option records
+ */
 const retrieveOptionRecords = (db, questionId) => {
   return new Promise((resolve, reject) => {
 
@@ -107,14 +119,12 @@ const retrieveOptionRecords = (db, questionId) => {
 };
 
 
-
 /**
  * Retrieves a single quiz with its questions and options
  * @param {object} db The database driver reference
  * @param {integer} quiz_id The id of the quiz to retrieve
  * @returns a promise to an object containing the quiz data
  */
-
 const retrieveQuiz = (db, quizId) => {
   //Matt
   return new Promise((resolve, reject) => {
@@ -156,8 +166,5 @@ const retrieveQuiz = (db, quizId) => {
       });
   });
 };
-
-
-
 
 module.exports = retrieveQuiz;
