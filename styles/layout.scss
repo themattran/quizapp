@@ -1,6 +1,45 @@
 // See: https://sass-lang.com/
 
 body,
+
 html {
   margin: 0;
+}
+
+@mixin centerVertially {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  font-size: 150%;
+  background-color: #edf7f5;
+  color: black;
+  height: 10vh;
+  @include centerVertially();
+}
+
+.header-container {
+  width: 80%;
+}
+
+nav {
+  float: right;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      display: inline-block;
+      margin-left: 50px;
+      a {
+        color: #575c5b;
+        text-decoration: none;
+      }
+      a:hover {
+        color: #399986;
+      }
+    }
+  }
 }
