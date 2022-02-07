@@ -16,7 +16,7 @@ header {
   font-size: 150%;
   background-color: #edf7f5;
   width: 100%;
-  height: 10vh;
+  height: 80px;
   @include centerVertially();
   position: fixed;
   z-index: 10;
@@ -25,6 +25,12 @@ header {
 
 .header-container {
   width: 80%;
+  @include centerVertially();
+  justify-content: space-between;
+  img {
+    width: 100px;
+    height: 50px;
+  }
 }
 
 nav {
@@ -42,8 +48,13 @@ nav {
         text-decoration: none;
       }
       a:hover {
-        color: #399986;
+        color: #ae4536;
       }
     }
   }
 }
+
+/*
+Logo primary colour: #780b00
+Logo secondary colour: #ae4536
+*/
