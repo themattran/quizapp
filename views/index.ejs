@@ -8,7 +8,7 @@
 
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/login.css" type="text/css" />
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&display=swap">
   <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
@@ -21,7 +21,10 @@
   <div class="header">
     <div class="header-container">
         <a href="/">
+          <!--Where logo file is located. Ideally use this local asset as opposed to fetching url
         <img src="../public/assets/2x1 HD LOGO.png">
+          -->
+          <img src="https://i.imgur.com/w7MaX4f.png">
         </a>
     <nav>
       <ul>
@@ -32,10 +35,26 @@
     </nav>
     </div>
   </div>
-
-  <div>
-    
-  </div>
+<!--
+  <main class="container">
+    <article class="grid">
+      <div>
+        <form>
+          <input type="text" name="user" placeholder="Username" aria-label="Username">
+          <input type="password" name="password" placeholder="Password" aria-label="Password">
+          <fieldset>
+            <label for="remember">
+              <input type="checkbox" id="remember">
+              Remember me
+            </label>
+          </fieldset>
+          <button type="submit" class="contrast" onclick="event.preventDefault()">Log in</button>
+        </form>
+      </div>
+      <div></div>
+    </article>
+  </main>
+-->
 </body>
 
 </html>
