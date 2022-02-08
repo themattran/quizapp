@@ -1,4 +1,11 @@
 // See: https://sass-lang.com/
+[data-theme="light"],
+:root:not([data-theme="dark"]) {
+  --primary: #e53935;
+  --primary-hover: #d32f2f;
+  --primary-focus: rgba(229, 57, 53, 0.125);
+  --primary-inverse: #FFF;
+}
 
 body,
 
