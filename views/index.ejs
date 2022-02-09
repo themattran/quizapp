@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
   <link rel="stylesheet" href="/styles/login.css" type="text/css" />
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/create-quiz.css" type="text/css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&display=swap">
   <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
 
@@ -36,7 +37,7 @@
     </div>
   </div>
 
-  <section class="container" id="login">
+  <!-- <section class="container" id="login">
     <article class="grid">
       <div>
         <form>
@@ -51,9 +52,8 @@
           <button type="submit" class="contrast" onclick="event.preventDefault()">Log in</button>
         </form>
       </div>
-      <div></div>
     </article>
-  </section>
+  </section> -->
 
   <section id="my-quizzes"> </section>
 
@@ -62,7 +62,12 @@
   </section>
 
   <section class="container" id="create-quiz">
-
+    <form>
+        <textarea id="new-quiz-title" name="title" placeholder="Give your app a catchy title" required=""></textarea>
+        <article>
+        <input type="question" id="question" name="question" placeholder="Question 1" required="">
+        </article>
+    </form>
   </section>
 
   <section id="attempt-quiz">
