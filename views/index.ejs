@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
   <link rel="stylesheet" href="/styles/login.css" type="text/css" />
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/create-quiz.css" type="text/css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&display=swap">
   <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
 
@@ -37,7 +38,7 @@
     </div>
   </div>
 
-  <section class="container" id="login">
+  <!-- <section class="container" id="login">
     <article class="grid">
       <div>
         <form>
@@ -52,9 +53,8 @@
           <button type="submit" class="contrast" onclick="event.preventDefault()">Log in</button>
         </form>
       </div>
-      <div></div>
     </article>
-  </section>
+  </section> -->
 
   <section id="my-quizzes"> </section>
 
@@ -63,7 +63,19 @@
   </section>
 
   <section class="container" id="create-quiz">
-
+    <form>
+        <textarea class="container" id="new-quiz-title" name="title" placeholder="Give your quiz a catchy title" required=""></textarea>
+          <article>
+           <textarea id="new-quiz-question" name="question" placeholder="Question 1" required=""></textarea>
+           <div class="container" id="options">
+           <textarea id="new-option" name="option" placeholder="Enter a possible answer"></textarea>
+           <fieldset>
+             <input type="checkbox" id="correct" name="correct">
+             <span>Correct?</span>
+          </fieldset>
+           </div>
+          </article>
+    </form>
   </section>
 
   <section id="attempt-quiz">
