@@ -15,12 +15,13 @@
 
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
+  <script type="text/javascript" src="/scripts/view-switching.js"></script>
 </head>
 
 <body>
   <div class="header">
     <div class="header-container">
-        <a href="/">
+        <a class="navlink" data="list-quizzes" href="/">
           <!--Where logo file is located. Ideally use this local asset as opposed to fetching url
         <img src="../public/assets/2x1 HD LOGO.png">
           -->
@@ -28,9 +29,9 @@
         </a>
     <nav>
       <ul>
-        <li><a href="#">My Quizzes</a></li>
-        <li><a href="#">Create Quiz</a></li>
-        <li><a href="#">Sign In</a></li>
+        <li><a class="navlink" data="my-quizzes" href="#">My Quizzes</a></li>
+        <li><a class="navlink" data="create-quiz"  href="#">Create Quiz</a></li>
+        <li><a class="navlink" data="login" href="#">Sign In</a></li>
       </ul>
     </nav>
     </div>
