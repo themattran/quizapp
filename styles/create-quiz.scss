@@ -1,3 +1,9 @@
+#create-quiz {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @mixin longformInput {
   font-family: 'Righteous', cursive;
   border: none;
@@ -6,15 +12,34 @@
   overflow-wrap: break-word;
 }
 
+form {
+  width: 60%;
+}
+
 #new-quiz-title {
   @include longformInput();
   font-family: 'Righteous', cursive;
   font-size: 50px;
-  width: 50%;
   height: 4em; 
 }
 
 #new-quiz-question {
   font-size: 30px;
   @include longformInput();
+}
+
+#new-option {
+  background-color: #780b00;
+  @include longformInput();
+  color: white;
+}
+
+#options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#correct {
+  margin-left: 2em;
 }

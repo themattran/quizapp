@@ -64,9 +64,13 @@
   <section class="container" id="create-quiz">
     <form>
         <textarea class="container" id="new-quiz-title" name="title" placeholder="Give your quiz a catchy title" required=""></textarea>
-        <article>
-        <textarea id="new-quiz-question" name="question" placeholder="Question 1" required=""></textarea>
-        </article>
+          <article>
+           <textarea id="new-quiz-question" name="question" placeholder="Question 1" required=""></textarea>
+           <div class="container" id="options">
+           <textarea id="new-option" name="option" placeholder="Enter a possible answer"></textarea>
+           <input type="checkbox" id="correct" name="correct">Correct answer?
+           </div>
+          </article>
     </form>
   </section>
 
