@@ -35,7 +35,7 @@ form {
   margin-bottom: 0.5em;
 }
 
-.options-container {
+.modular-option-node {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -72,4 +72,8 @@ fieldset {
   border-width: medium;
   border-color: #ae4536;
   margin-bottom: 2em;
+}
+
+#modular-option-node {
+  width: 100%
 }
