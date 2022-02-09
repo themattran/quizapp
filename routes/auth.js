@@ -48,7 +48,7 @@ module.exports = (db) => {
    * Logout/remove req.session.user object
    * Return JSON acknowledgment: { message }
    */
-  router.post("/logout", (req, res) => {
+  router.all("/logout", (req, res) => {
     const user = req.session.user;
     if (user) {
       console.log(`User ${user.name} logged out (id: ${user.id})`);
