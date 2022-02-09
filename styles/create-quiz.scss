@@ -55,5 +55,11 @@ fieldset {
 }
 
 .save-button {
-  width: 30%;
+  width: 28%;
+  padding: 8px 10px;
+}
+
+.button-flex {
+  display: flex;
+  justify-content: flex-end;
 }
