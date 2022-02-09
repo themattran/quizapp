@@ -41,5 +41,11 @@ form {
 }
 
 #correct {
-  margin-left: 2em;
+  margin-left: 1em;
+}
+
+fieldset {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
