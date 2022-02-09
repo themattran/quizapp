@@ -62,10 +62,10 @@
 
   </section>
 
-  <section class="container" id="create-quiz">
+  <section id="create-quiz">
     <form>
         <textarea class="container" id="new-quiz-title" name="title" placeholder="Give your quiz a catchy title" required=""></textarea>
-          <article>
+          <article id="option-container">
            <textarea id="new-quiz-question" name="question" placeholder="Question 1" required=""></textarea>
            <div class="container" id="options">
            <textarea id="new-option" name="option" placeholder="Enter a possible answer"></textarea>
@@ -74,7 +74,9 @@
              <span>Correct?</span>
           </fieldset>
            </div>
+           <button class="save-button">+ Add next question</button>
           </article>
+          <button>Save and publish quiz</button>
     </form>
   </section>
 
