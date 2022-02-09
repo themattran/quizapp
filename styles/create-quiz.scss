@@ -32,12 +32,14 @@ form {
   background-color: #780b00;
   @include longformInput();
   color: white;
+  margin-bottom: 0.5em;
 }
 
-#options {
+.options-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 0;
 }
 
 #correct {
@@ -50,16 +52,24 @@ fieldset {
   align-items: center;
 }
 
-#option-container {
+#question-option-container {
   padding-bottom: 0;
 }
 
 .save-button {
   width: 28%;
-  padding: 8px 10px;
+  padding: 8px 5px;
 }
 
 .button-flex {
   display: flex;
   justify-content: flex-end;
+}
+
+.nother-question {
+  background-color: #b89d9a;
+  border-style: dashed;
+  border-width: medium;
+  border-color: #ae4536;
+  margin-bottom: 2em;
 }

@@ -65,15 +65,16 @@
   <section id="create-quiz">
     <form>
         <textarea class="container" id="new-quiz-title" name="title" placeholder="Give your quiz a catchy title" required=""></textarea>
-          <article id="option-container">
+          <article id="question-option-container">
            <textarea id="new-quiz-question" name="question" placeholder="Question 1" required=""></textarea>
-           <div class="container" id="options">
+           <div class="options-container">
            <textarea id="new-option" name="option" placeholder="Enter a possible answer"></textarea>
            <fieldset>
              <input type="checkbox" id="correct" name="correct">
              <span>Correct?</span>
-          </fieldset>
+           </fieldset>
            </div>
+           <button class="nother-question">+</button>
            <div class="button-flex">
            <button class="save-button">+ Add next question</button>
            </div>
