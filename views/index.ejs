@@ -42,9 +42,8 @@
   </div>
 
   <section class="container" id="login">
-    <article class="grid">
-      <div>
-        <form>
+    <article class="grid" id="login-container">
+        <form id="login-inputs">
           <input id="login_user" type="text" name="user" placeholder="Username" aria-label="Username">
           <input type="password" name="password" placeholder="Password" aria-label="Password">
           <fieldset>
@@ -55,7 +54,6 @@
           </fieldset>
           <button id="login_submit" type="submit" class="contrast" onclick="event.preventDefault()">Log in</button>
         </form>
-      </div>
     </article>
   </section>
 
@@ -67,7 +65,7 @@
   </section>
 
   <section id="create-quiz">
-    <form>
+    <form id="quiz-creator">
         <textarea class="container" id="new-quiz-title" name="title" placeholder="Give your quiz a catchy title" required=""></textarea>
         <div class="questions-container">
           <article id="question-option-container">
