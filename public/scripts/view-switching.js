@@ -20,6 +20,7 @@ const showView = (viewName) => {
  * @param {string} viewName
  */
 const switchToView = (viewName) => {
+  console.log(`Switching to view ${viewName} (isLoggedIn = ${isLoggedIn()})`);
   hideAllViews();
   showView(viewName);
 };
@@ -34,11 +35,24 @@ $(document).ready(function() {
   $(".navlink").on('click', function(e) {
     e.preventDefault();
     const viewName = $(this).attr('data');
-    switchToView(viewName);
+    const isProtectedView = ["my-quizzes", "create-quiz"].includes(viewName);
+    if (isLoggedIn() || !isProtectedView) {
+      //User is logged in or requested a public view -> proceed
+      switchToView(viewName);
+    } else {
+      //User is not logged in and requested a protected view -> redirect to login
+      switchToView("login");
+    }
+  });
+
+  $("#nav_login").click(function() {
+    if (isLoggedIn()) {
+      logout();
+    }
   });
 
   /**
    * Start with home screen (list-quizzes)
    */
-  hideAllViews('list-quizzes');
+  switchToView('list-quizzes');
 });
