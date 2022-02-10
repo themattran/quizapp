@@ -39,11 +39,15 @@ module.exports = (db) => {
 
   //Store a new quiz (Johannes)
   router.post("/", express.json(), (req, res) => {
-    storeQuiz(db, 1, req.body).then(quizRecord => {
-      res.json(quizRecord);
-    }).catch(err => {
-      res.status(500).json({error: err.message});
-    });
+    if (req.session.user && req.session.user.id > 0) {
+      storeQuiz(db, req.session.user.id, req.body).then(quizRecord => {
+        res.json(quizRecord);
+      }).catch(err => {
+        res.status(500).json({error: err.message});
+      });
+    } else {
+      res.status(401).json({error: "Not allowed"});
+    }
   });
 
   return router;
