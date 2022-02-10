@@ -41,5 +41,4 @@ $(document).ready(function() {
    * Start with home screen (list-quizzes)
    */
   hideAllViews('list-quizzes');
-
 });

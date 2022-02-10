@@ -63,41 +63,34 @@
 
   </section>
 
-  <%
-    let additionalOption = `<div class="modular-option-node">
-      <textarea id="new-option" name="option" placeholder="Enter a possible answer"></textarea>
-      <fieldset>
-        <input type="checkbox" id="correct" name="correct">
-        <span>Correct?</span>
-      </fieldset>
-     </div>`;
-  %>
-
   <section id="create-quiz">
     <form>
         <textarea class="container" id="new-quiz-title" name="title" placeholder="Give your quiz a catchy title" required=""></textarea>
+        <div class="questions-container">
           <article id="question-option-container">
-           <textarea id="new-quiz-question" name="question" placeholder="Question 1" required=""></textarea>
-           <div class="options-container">
+           <textarea id="new-quiz-question" name="question" placeholder="Enter your question" required=""></textarea>
+           <div id="options-parent">
+             <div id="options-target">
              <div class="modular-option-node">
            <textarea id="new-option" name="option" placeholder="Enter a possible answer"></textarea>
            <fieldset>
              <input type="checkbox" id="correct" name="correct">
              <span>Correct?</span>
-           </fieldset>
           </div>
-           </div>
-           <button class="nother-question">+</button>
+        </div>
+          <button class="nother-option">+</button>
+          </div>
            <div class="button-flex">
            <button class="save-button">+ Add next question</button>
            </div>
           </article>
-          <button>Save and publish quiz</button>
+        </div>
+          <button class="submit-quiz-object">Save and publish quiz</button>
     </form>
   </section>
 
   <section id="attempt-quiz">
-
+    
   </section>
 </body>
 
