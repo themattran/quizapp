@@ -11,6 +11,17 @@ const _currentUser = {};
 const isLoggedIn = () => _currentUser.id > 0;
 
 /**
+ * Adjust UI according to whether the user is logged in or not
+ */
+ const updateNavUI = () => {
+  if (_currentUser.id) {
+    $("#nav_login").text(`Sign Out (${_currentUser.name})`);
+  } else {
+    $("#nav_login").text("Sign In");
+  }
+};
+
+/**
  * Login user with name userName, and store the name and id in the global _currentUser object.
  * @param {string} userName
  * @returns a promise to the login confirmation and user record
@@ -37,19 +48,11 @@ const logout = () => {
       console.log(`Logging out`, data);
       _currentUser.id = undefined;
       _currentUser.name = undefined;
+      updateNavUI();
     });
 };
 
-/**
- * Adjust UI according to whether the user is logged in or not
- */
-const updateNavUI = () => {
-  if (_currentUser.id) {
-    $("#nav_login").text(`Sign Out (${_currentUser.name})`);
-  } else {
-    $("#nav_login").text("Sign In");
-  }
-};
+
 
 $(document).ready(function() {
 
