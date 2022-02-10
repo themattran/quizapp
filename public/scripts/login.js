@@ -52,7 +52,18 @@ const logout = () => {
     });
 };
 
-
+/**
+ * Get the state of the session from the server (on page load)
+ */
+const pullSessionState = () => {
+  return $.get('/api/auth/state')
+    .done(data => {
+      if (data.id) {
+        _currentUser.id = data.id;
+        _currentUser.name = data.name;
+      }
+    });
+}
 
 $(document).ready(function() {
 
@@ -70,5 +81,13 @@ $(document).ready(function() {
         });
     }
   });
+
+  /**
+   * On page load, pull the session state and adjust UI according to whether user is logged in
+   */
+  pullSessionState()
+    .then(() => {
+      updateNavUI();
+    });
 
 });
