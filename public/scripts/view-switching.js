@@ -36,5 +36,4 @@ $(document).ready(function() {
     const viewName = $(this).attr('data');
     switchToView(viewName);
   });
-
 });
