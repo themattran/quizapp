@@ -40,8 +40,8 @@ module.exports = (db) => {
   //Store a new quiz (Johannes)
   router.post("/", express.json(), (req, res) => {
     if (req.session.user && req.session.user.id > 0) {
-      storeQuiz(db, req.session.user.id, req.body).then(quizRecord => {
-        res.json(quizRecord);
+      storeQuiz(db, req.session.user.id, req.body).then(() => {
+        res.json({message:"success"});
       }).catch(err => {
         res.status(500).json({error: err.message});
       });
