@@ -100,7 +100,7 @@ $(document).ready(function() {
     const quizObject = parseQuiz();
     $.post("/api/quizzes", quizObject)
       .done(data => {
-        console.log(data);
+        console.log("Submitted new quiz successfully!",data);
       });
   });
 });
