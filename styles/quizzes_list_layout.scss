@@ -2,13 +2,12 @@ $card-hover-color: #546f84;
 $brand-blue: #5c9ccd;
 $brand-black: #1B2832;
 
-#list-quizzes {
-  display: flex;
-  justify-content: space-around;
-  justify-content: center;
-  flex-direction: column;
+#home-list-quizzes {
+  display: grid;
   align-items: center;
   padding: 1rem;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
 }
 
 // .column-one {
@@ -21,7 +20,7 @@ $brand-black: #1B2832;
 //   flex-direction: column;
 // }
 
-#add-quiz {
+#home-add-quiz {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,7 +35,7 @@ $brand-black: #1B2832;
   transition: all 0.25s ease-out;
 }
 
-#add-quiz h1{
+#home-add-quiz h1{
   color: $brand-black;
 }
 
@@ -45,7 +44,7 @@ $brand-black: #1B2832;
   font-size: 4em;
 }
 
-#add-quiz:hover {
+#home-add-quiz:hover {
   background-color: $brand-blue;
   transition: all 0.25s ease-in;
 }
@@ -60,9 +59,10 @@ $brand-black: #1B2832;
   -webkit-box-shadow: 0px 1px 34px 0px rgba(0,0,0,0.10);
   -moz-box-shadow: 0px 1px 34px 0px rgba(0,0,0,0.10);
   height: 400px;
-  width: 400px;
+  //width: 400px;
   margin: 2rem;
   transition: all 0.25s ease-out;
+  grid-column: 1 span;
 }
 
 .quiz-card h1{
