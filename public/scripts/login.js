@@ -14,6 +14,7 @@ const login = (userName) => {
       _currentUser.id = data.userId;
       _currentUser.name = data.userName;
     }
+    console.log("_currentUser:", _currentUser);
   });
 };
 
@@ -25,10 +26,7 @@ $(document).ready(function() {
   $("#login_submit").click(function() {
     const userName = $("#login_user").val();
     if (userName) {
-      login(userName)
-        .then(user => {
-          console.log(`Logged in with username ${user}`);
-        });
+      login(userName);
     }
   });
 
