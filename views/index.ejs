@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="/styles/login.css" type="text/css" />
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/create-quiz.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/attempt-quiz.css" type="text/css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&display=swap">
   <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
 
@@ -60,6 +61,7 @@
 
   <section id="my-quizzes"> </section>
 
+
   <section id="list-quizzes">
 
   </section>
@@ -90,9 +92,72 @@
     </form>
   </section>
 
-  <section id="attempt-quiz">
-    
+  <% 
+  let quizObj = {
+    "name": "Third quiz",
+    "questions": [
+      {
+        "question_string": "who is president in Ukraine?",
+        "options": [
+          {
+            "content": "Volodymyr Zelensky",
+            "is_correct": true
+          },
+          {
+            "content": "Joe Biden",
+            "is_correct": false
+          },
+          {
+            "content": "Vladimir Putin",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "question_string": "who is president in the US?",
+        "options": [
+          {
+            "content": "Volodymyr Zelensky",
+            "is_correct": false
+          },
+          {
+            "content": "Donald Trump",
+            "is_correct": false
+          },
+          {
+            "content": "Joe Biden",
+            "is_correct": true
+          },
+          {
+            "content": "Vladimir Putin",
+            "is_correct": false
+          }
+        ]
+      }
+    ]
+  };
+  
+%>
+  <section id="attempt-quiz" class="container">
+    <div id="quiz-title">
+     <%= quizObj.name %>
+    </div>
+    <% for (let q of quizObj.questions) { %>
+      <article>
+        <div id="question-content">
+          <%= q.question_string %>
+        </div>
+        <div id="options-container">
+        <% for (let o of q.options) { %>
+          <button id="each-option">
+            <%= o.content %>
+          </button>
+        <% } %>
+        </div>
+      </article>
+      <% } %>
   </section>
+
 </body>
 
 </html>
