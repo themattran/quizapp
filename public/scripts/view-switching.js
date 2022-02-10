@@ -37,4 +37,9 @@ $(document).ready(function() {
     switchToView(viewName);
   });
 
+  /**
+   * Start with home screen (list-quizzes)
+   */
+  hideAllViews('list-quizzes');
+
 });
