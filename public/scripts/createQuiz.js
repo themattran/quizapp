@@ -1,6 +1,6 @@
 //Element representing additional option
 const additionalOption =
-  `<div class="modular-option-node">
+  `<div class="modular-option-node dynamically-added">
     <textarea id="new-option" name="option" placeholder="Enter a possible answer"></textarea>
     <fieldset>
       <input type="checkbox" id="correct" name="correct">
@@ -10,7 +10,7 @@ const additionalOption =
 
 //Element representing additional question
 const additionalQuestion =
-`<article id="question-option-container">
+`<article id="question-option-container" class="dynamically-added">
 <textarea id="new-quiz-question" name="question" placeholder="Enter your question" required=""></textarea>
 <div id="options-parent">
   <div id="options-target">
@@ -78,6 +78,16 @@ const parseQuiz = () => {
   return quizObject;
 };
 
+/**
+ * Reset the form
+ */
+const clearNewQuizForm = () => {
+  console.log("MOIVING");
+  $("#create-quiz form")[0].reset();
+  //Remove all questions and add a new one back into the container
+  $(".questions-container").empty().append(additionalQuestion);
+};
+
 $(document).ready(function() {
 
   $(document).on('click', '.nother-option', function(e) {
@@ -93,7 +103,8 @@ $(document).ready(function() {
 
 
   /**
-   * Event handler for the submit quiz button: parse quiz and post JSON object to /api/quizzes
+   * Event handler for the submit quiz button: parse quiz and post JSON object to /api/quizzes,
+   * then redirect to my-quizzes view (where the new quiz should show up in the list)
    */
   $(".submit-quiz-object").click(function(e) {
     e.preventDefault();
@@ -101,6 +112,8 @@ $(document).ready(function() {
     $.post("/api/quizzes", quizObject)
       .done(data => {
         console.log("Submitted new quiz successfully!",data);
+        clearNewQuizForm();
+        switchToView("my-quizzes");
       });
   });
 });
