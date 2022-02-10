@@ -1,7 +1,5 @@
 // See: https://sass-lang.com/
 
-body,
-
 html {
   margin: 0;
 }
@@ -17,7 +15,7 @@ html {
   font-size: 150%;
   width: 100%;
   @include centerVertially();
-  position: fixed;
+  position: relative;
   z-index: 10;
   box-shadow: 0px 0px 5px grey;
   padding: 0;
