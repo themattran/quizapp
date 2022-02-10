@@ -9,21 +9,22 @@ const express = require('express');
 const router  = express.Router();
 const storeQuiz = require('../modules/storeQuiz');
 const retrieveQuiz = require('../modules/retrieveQuiz');
+const getQuizzes = require('../modules/getQuizzes');
 
 module.exports = (db) => {
   //Get all quizzes
   router.get("/", (req, res) => {
-    let query = `SELECT * FROM quizzes`;
-    console.log(query);
-    db.query(query)
-      .then(data => {
-        const quizzes = data.rows;
-        res.json({ quizzes });
+    const options = req.query;
+    getQuizzes(db, options)
+      .then(quizRecords => {
+        res
+          .status(200)
+          .json(quizRecords);
       })
       .catch(err => {
         res
           .status(500)
-          .json({ error: err.message });
+          .json(err);
       });
   });
 
