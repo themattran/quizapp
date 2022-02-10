@@ -9,13 +9,21 @@ const _currentUser = {};
  * @param {string} userName
  */
 const login = (userName) => {
-  return $.post('/api/auth/login', { userName }, (data) => {
-    if (data.userId) {
+  return $.post('/api/auth/login', { userName })
+    .done(data => {
       _currentUser.id = data.userId;
       _currentUser.name = data.userName;
-    }
-    console.log("_currentUser:", _currentUser);
-  });
+    })
+    .fail(err => {
+      console.log('Login failed', err);
+    });
+};
+
+/**
+ * Adjust UI according to whether the user is logged in or not
+ */
+const updateNavUI = () => {
+
 };
 
 $(document).ready(function() {
@@ -26,7 +34,12 @@ $(document).ready(function() {
   $("#login_submit").click(function() {
     const userName = $("#login_user").val();
     if (userName) {
-      login(userName);
+      login(userName)
+        .then(() => {
+          updateNavUI();
+          //Direct user to the my-quizzes view after login
+          switchToView("my-quizzes");
+        });
     }
   });
 
