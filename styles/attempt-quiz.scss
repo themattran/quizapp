@@ -1,0 +1,29 @@
+#attempt-quiz {
+  width: 60%;
+}
+
+#quiz-title {
+  text-align: center;
+  font-family: 'Righteous', cursive;
+  border: none;
+  border-bottom:3px solid #ae4536;
+  color: #ae4536;
+  overflow-wrap: break-word;
+  font-family: 'Righteous', cursive;
+  font-size: 75px;
+}
+
+#question-content {
+  font-size: 30px;
+  font-family: 'Righteous', cursive;
+  text-align: center;
+}
+
+#options-container {
+  margin-top: 3em;
+}
+
+#each-option {
+  background-color: #780b00;
+  color: white;
+}
