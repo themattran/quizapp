@@ -36,4 +36,9 @@ $(document).ready(function() {
     const viewName = $(this).attr('data');
     switchToView(viewName);
   });
+
+  /**
+   * Start with home screen (list-quizzes)
+   */
+  hideAllViews('list-quizzes');
 });
