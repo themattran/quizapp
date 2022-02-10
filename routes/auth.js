@@ -60,6 +60,16 @@ module.exports = (db) => {
       .status(200)
       .json({message: "You have logged out - goodbye."});
   });
+
+  /**
+   * Return the state of the session (req.session.user)
+   */
+  router.get("/state", (req, res) => {
+    res
+      .status(200)
+      .json(req.session.user);
+  });
+
   return router;
 };
 
