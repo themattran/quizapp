@@ -82,7 +82,6 @@ const parseQuiz = () => {
  * Reset the form
  */
 const clearNewQuizForm = () => {
-  console.log("MOIVING");
   $("#create-quiz form")[0].reset();
   //Remove all questions and add a new one back into the container
   $(".questions-container").empty().append(additionalQuestion);
