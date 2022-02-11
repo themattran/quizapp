@@ -79,6 +79,62 @@ const parseQuiz = () => {
 };
 
 /**
+ * Validate the option: ensure it has text
+ * @param {object} optionObject
+ * @returns true if the option is valid
+ */
+const verifyOptionObject = (optionObject) => {
+  return optionObject.content.trim().length > 0;
+};
+
+/**
+ * Validate the question object itself (shallow): ensure it has text, and at least 2 options
+ * @param {object} questionObject
+ * @returns true if the question is valid
+ */
+const verifyQuestionObject = (questionObject) => {
+  return questionObject.question_string.trim().length > 0
+    && questionObject.options.length > 1;
+};
+
+/**
+ * Validate the quiz object itself (shallow): ensure it has a title, and at least one question
+ * @param {object} quizObject
+ * @returns true if the quiz is valid
+ */
+const verifyQuizObject = (quizObject) => {
+  return quizObject.name.trim().length > 0
+    && quizObject.questions.length > 0;
+};
+
+/**
+ * Deep-validate the entire quiz object
+ * @param {object} quizObject
+ * @returns true if the entire quiz is valid
+ */
+const verifyQuiz = (quizObject) => {
+  if (verifyQuizObject(quizObject)) {
+    for (const question of quizObject.questions) {
+      if (verifyQuestionObject(question)) {
+        for (const option of question.options) {
+          if (!verifyOptionObject(option)) {
+            //Invalid option
+            return false;
+          }
+        }
+      } else {
+        //Invalid question
+        return false;
+      }
+    }
+  } else {
+    //Invalid quiz
+    return false;
+  }
+  return true;
+};
+
+/**
  * Reset the form
  */
 const clearNewQuizForm = () => {
@@ -108,11 +164,16 @@ $(document).ready(function() {
   $(".submit-quiz-object").click(function(e) {
     e.preventDefault();
     const quizObject = parseQuiz();
-    $.post("/api/quizzes", quizObject)
-      .done(data => {
-        console.log("Submitted new quiz successfully!",data);
-        clearNewQuizForm();
-        switchToView("my-quizzes");
-      });
+    if (verifyQuiz(quizObject)) {
+      $.post("/api/quizzes", quizObject)
+        .done(data => {
+          console.log("Submitted new quiz successfully!",data);
+          clearNewQuizForm();
+          switchToView("my-quizzes");
+        });
+    } else {
+      //Quiz is not valid. Need title, at least 1 question with at least 2 options.
+      console.log("Unfortunately the quiz data is incomplete - make sure to fill in all fields");
+    }
   });
 });
