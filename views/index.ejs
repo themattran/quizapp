@@ -42,7 +42,7 @@
   </div>
 
   <section class="container" id="login">
-    <article class="grid" id="login-container">
+    <article id="login-container">
         <form id="login-inputs">
           <input id="login_user" type="text" name="user" placeholder="Username" aria-label="Username">
           <input type="password" name="password" placeholder="Password" aria-label="Password">
@@ -54,42 +54,29 @@
           </fieldset>
           <button id="login_submit" type="submit" class="contrast" onclick="event.preventDefault()">Log in</button>
         </form>
-    </article>
-  </section>
-
-  <section id="my-quizzes"> </section>
-
-
-  <section id="list-quizzes">
-
-  </section>
-
-  <section id="create-quiz">
-    <form id="quiz-creator">
-        <textarea class="container" id="new-quiz-title" name="title" placeholder="Give your quiz a catchy title" required=""></textarea>
-        <div class="questions-container">
-          <article id="question-option-container">
-           <textarea id="new-quiz-question" name="question" placeholder="Enter your question" required=""></textarea>
-           <div id="options-parent">
-             <div id="options-target">
-             <div class="modular-option-node">
-           <textarea id="new-option" name="option" placeholder="Enter a possible answer"></textarea>
-           <fieldset>
-             <input type="checkbox" id="correct" name="correct">
-             <span>Correct?</span>
-          </div>
-        </div>
-          <button class="nother-option">+ Add an answer</button>
-          </div>
-           <div class="button-flex">
-           <button class="save-button">+ Add next question</button>
-           </div>
+        <div>
+          <article id="static-example">
+            <div id="question-content">
+              Who scored the winning touchdown of Superbowl 51?
+            </div>
+            <div id="options-container">
+              <button id="each-option">
+                James White
+              </button>
+              <button id="each-option">
+                Danny Amendola
+              </button>
+              <button id="each-option">
+                Julian Edelman
+              </button>
+              <button id="each-option">
+                Sony Michel
+              </button>
+            </div>
           </article>
         </div>
-          <button class="submit-quiz-object">Save and publish quiz</button>
-    </form>
+    </article>
   </section>
-
   <% 
   let quizObj = {
     "name": "Third quiz",
@@ -136,6 +123,58 @@
   };
   
 %>
+  <section id="my-quizzes">  <section id="attempt-quiz" class="container">
+    <div id="quiz-title">
+     <%= quizObj.name %>
+    </div>
+    <% for (let q of quizObj.questions) { %>
+      <article>
+        <div id="question-content">
+          <%= q.question_string %>
+        </div>
+        <div id="options-container">
+        <% for (let o of q.options) { %>
+          <button id="each-option">
+            <%= o.content %>
+          </button>
+        <% } %>
+        </div>
+      </article>
+      <% } %>
+  </section> </section>
+
+
+  <section id="list-quizzes">
+
+  </section>
+
+  <section id="create-quiz">
+    <form id="quiz-creator">
+        <textarea class="container" id="new-quiz-title" name="title" placeholder="Give your quiz a catchy title" required=""></textarea>
+        <div class="questions-container">
+          <article id="question-option-container">
+           <textarea id="new-quiz-question" name="question" placeholder="Enter your question" required=""></textarea>
+           <div id="options-parent">
+             <div id="options-target">
+             <div class="modular-option-node">
+           <textarea id="new-option" name="option" placeholder="Enter a possible answer"></textarea>
+           <fieldset>
+             <input type="checkbox" id="correct" name="correct">
+             <span>Correct?</span>
+          </div>
+        </div>
+          <button class="nother-option">+ Add an answer</button>
+          </div>
+           <div class="button-flex">
+           <button class="save-button">+ Add next question</button>
+           </div>
+          </article>
+        </div>
+          <button class="submit-quiz-object">Save and publish quiz</button>
+    </form>
+  </section>
+
+
   <section id="attempt-quiz" class="container">
     <div id="quiz-title">
      <%= quizObj.name %>
