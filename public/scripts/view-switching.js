@@ -43,7 +43,7 @@ const initStore = makeInitStore();
  * Switch the to view with the given name
  * @param {string} viewName
  */
-const switchToView = (viewName) => {
+const switchToView = (viewName, initOptions) => {
 
   /**
    * Make all section elements that are first children of the <body> tag invisible
@@ -60,12 +60,18 @@ const switchToView = (viewName) => {
     $(`#${viewName}`).show();
   };
 
-  console.log(`Switching to view ${viewName} (isLoggedIn = ${isLoggedIn()})`);
+  //Log details to console
+  console.log(`Switching to view ${viewName}`);
+  console.log("  -isLoggedIn: ",isLoggedIn());
+  if (initOptions) {
+    console.log("  -initOptions: ",initOptions);
+  }
+
   hideAllViews();
   //Retrieve and (if extant) run initialization function for the new view
   const initFunction = initStore.getInitializer(viewName);
   if (initFunction) {
-    initFunction();
+    initFunction(initOptions);
   }
   showView(viewName);
 };
@@ -101,7 +107,7 @@ $(document).ready(function() {
    * Otherwise start with the home screen (list-quizzes)
    */
   if (typeof attemptQuizId !== 'undefined' && attemptQuizId > 0) {
-    switchToView('attempt-quiz', attemptQuizId);
+    switchToView('attempt-quiz', { quiz_id: attemptQuizId });
   } else {
     switchToView('list-quizzes');
   }
