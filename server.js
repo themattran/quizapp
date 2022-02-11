@@ -53,8 +53,14 @@ app.use("/api/questions", questionsRoutes(db));
 app.use("/api/options", optionsRoutes(db));
 
 // Note: mount other resources here, using the same pattern above
+
+//Auth (Login/Logout) routes
 const authRoutes = require("./routes/auth");
 app.use("/api/auth", authRoutes(db));
+
+//Attempt quiz route
+const attemptRoute = require("./routes/attempt");
+app.use("/attempt", attemptRoute(db));
 
 // Home page
 // Warning: avoid creating more routes in this file!
