@@ -20,6 +20,7 @@
   <script type="text/javascript" src="/scripts/view-switching.js"></script>
   <script type="text/javascript" src="/scripts/login.js"></script>
   <script type="text/javascript" src="/scripts/createQuiz.js"></script>
+  <script type="text/javascript" src="/scripts/list-quizzes.js"></script>
 </head>
 
 <body>
@@ -123,25 +124,8 @@
   };
   
 %>
-  <section id="my-quizzes">  <section id="attempt-quiz" class="container">
-    <div id="quiz-title">
-     <%= quizObj.name %>
-    </div>
-    <% for (let q of quizObj.questions) { %>
-      <article>
-        <div id="question-content">
-          <%= q.question_string %>
-        </div>
-        <div id="options-container">
-        <% for (let o of q.options) { %>
-          <button id="each-option">
-            <%= o.content %>
-          </button>
-        <% } %>
-        </div>
-      </article>
-      <% } %>
-  </section> </section>
+  <section id="my-quizzes">  
+  </section>
 
 
   <section id="list-quizzes">
