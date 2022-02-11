@@ -7,8 +7,14 @@ $(document).ready(function() {
     $(this).addClass("selected");
   });
 
-  $(document).on('click', '#submit-attempt', function (e) {
-    console.log(Array.isArray($(this).siblings()));
-  });
+  // let rightAnswers = 0;
+  // $(document).on('click', '#submit-attempt', function (e) {
+  //   for (let element in $(this).siblings("article").children(".options-container").children()) {
+  //     if (element.hasClass("selected") && element.hasClass("correct")) {
+  //       rightAnswers += 1;
+  //     }
+  //   }
+  //   console.log(rightAnswers);
+  // });
 });
 
