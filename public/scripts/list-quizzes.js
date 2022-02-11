@@ -32,6 +32,6 @@ const quizCard = (name, id) => {
 <div class="quiz-card">
         <i class="fa-duotone fa-gun-squirt"></i>
         <h1>${name}</h1>
-        <a href="/api/quizzes/${id}">Attemp Quiz</a>
+        <a href="/api/quizzes/${id}">Attempt Quiz</a>
       </div>
 `)};
