@@ -1,27 +1,72 @@
 //This script takes care of switching the views in the single-page app
 
 /**
- * Make all section elements that are first children of the <body> tag invisible
+ * Higher order function generating functions that allow views
+ * to register and retrieve initialization callbacks
+ * @returns {object} with storeInitializer, getInitializer functions
  */
-const hideAllViews = () => {
-  $("body > section").hide();
+const makeInitStore = () => {
+  const initFunctions = {};
+
+  /**
+   * Register a callback to initialize a view
+   * @param {string} viewname name of the view / id of its container
+   * @param {function} initFunction an initialization function for this view
+   */
+  const storeInitializer = (viewname, initFunction) => {
+    initFunctions[viewname] = initFunction;
+  };
+
+  /**
+   * Retrieve an initializer function for a view
+   * @param {string} viewname
+   * @returns the init function for viewname, or undefined
+   */
+  const getInitializer = (viewname) => {
+    return initFunctions[viewname];
+  };
+
+  return {
+    storeInitializer,
+    getInitializer,
+  };
 };
 
 /**
- * Make the section element with the id viewName visible
- * @param {string} viewName
+ * Create function that views can use to register an initialization callback
+ * that will be called each time switchToView(viewname) is executed
  */
-const showView = (viewName) => {
-  $(`#${viewName}`).show();
-};
+const initStore = makeInitStore();
+
 
 /**
  * Switch the to view with the given name
  * @param {string} viewName
  */
 const switchToView = (viewName) => {
+
+  /**
+   * Make all section elements that are first children of the <body> tag invisible
+   */
+  const hideAllViews = () => {
+    $("body > section").hide();
+  };
+
+  /**
+   * Make the section element with the id viewName visible
+   * @param {string} viewName
+   */
+  const showView = (viewName) => {
+    $(`#${viewName}`).show();
+  };
+
   console.log(`Switching to view ${viewName} (isLoggedIn = ${isLoggedIn()})`);
   hideAllViews();
+  //Retrieve and (if extant) run initialization function for the new view
+  const initFunction = initStore.getInitializer(viewName);
+  if (initFunction) {
+    initFunction();
+  }
   showView(viewName);
 };
 
