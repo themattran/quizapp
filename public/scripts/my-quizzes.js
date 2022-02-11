@@ -19,12 +19,12 @@ $(document).ready(function() {
         url: "/api/quizzes?limit=4&orderBy=random"
       }).done((res) => {
         console.log('res', res);
-        renderMyQuizzers(res);
+        renderMyQuizzes(res);
    });
 });
 
 //Function that renders quizzes and appends database questions to main container
-const renderMyQuizzers = function(quizzes) {
+const renderMyQuizzes = function(quizzes) {
   // $("#list-quizzes").empty();
   console.log('quizzes', quizzes);
   for (const quiz of quizzes) {
