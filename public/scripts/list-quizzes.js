@@ -43,10 +43,10 @@ const quizCard = (name, id) => {
 
 //Function that returns interactable quiz element
 const attemptQuizElement = (quizObj) => {
-  let quizElement = `<div id="quiz-title">${quizObj.name}</div>`
+  let quizElement = `<div id="quiz-title" class="container">${quizObj.name}</div>`
   for (let q of quizObj.questions) { 
     quizElement += 
-      `<article>
+      `<article class="container">
         <div id="question-content">
           ${q.questionString}
         </div>
@@ -66,7 +66,7 @@ const attemptQuizElement = (quizObj) => {
 
 //appending element returned by attemptQuizElement to the #attempt-quiz section
  const renderQuizAttempt = function (quiz) {
-   $("#attempt-quiz").empty();
-   $("#attempt-quiz").append(quiz);
+   $("#my-quizzes").empty();
+   $("#my-quizzes").append(quiz);
  }
 
