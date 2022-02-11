@@ -10,6 +10,7 @@ $(document).ready(function() {
       console.log(res);
       renderQuizAttempt(attemptQuizElement(res));
       //unclear how to switch view from here
+      switchToView("attempt-quiz");
     });
   });
 
@@ -44,8 +45,8 @@ const quizCard = (name, id) => {
 //Function that returns interactable quiz element
 const attemptQuizElement = (quizObj) => {
   let quizElement = `<div id="quiz-title" class="container">${quizObj.name}</div>`
-  for (let q of quizObj.questions) { 
-    quizElement += 
+  for (let q of quizObj.questions) {
+    quizElement +=
       `<article class="container">
         <div class="question-content">
           ${q.questionString}
@@ -54,7 +55,7 @@ const attemptQuizElement = (quizObj) => {
         for (let o of q.options) {
           o.isCorrect ? quizElement += `<button class="each-option correct">${o.content}</button>` : quizElement += `<button class="each-option">${o.content}</button>`;
         }
-    quizElement += 
+    quizElement +=
     `</div>
     </article>`;
   }
