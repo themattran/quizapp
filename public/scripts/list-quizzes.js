@@ -63,8 +63,8 @@ const attemptQuizElement = (quizObj) => {
 
 //appending element returned by attemptQuizElement to the #attempt-quiz section
  const renderQuizAttempt = function (quiz) {
-   $("#my-quizzes").empty();
-   $("#my-quizzes").append(quiz);
-   $("#my-quizzes").append('<button class="container" id="submit-attempt">Submit and show my score!</button>');
+   $("#attempt-quiz").empty();
+   $("#attempt-quiz").append(quiz);
+   $("#attempt-quiz").append('<button class="container" id="submit-attempt">Submit and show my score!</button>');
  }
 
