@@ -4,18 +4,17 @@ $(document).ready(function() {
       method: "GET",
       url: "/api/attemptQuiz"
     }).done((res) => {
-
+      
     });
   })
 
   $.ajax({
         method: "GET",
-        url: "/api/quizzes?orderBy=random&limit=4"
+        url: "/api/quizzes?limit=4&orderBy=random"
       }).done((res) => {
         console.log('quizzes', res);
         renderQuizzes(res.quizzes);
    });
-
 });
 
 //Function that renders quizzes and appends database questions to main container
@@ -32,7 +31,7 @@ const quizCard = (name, id) => {
 <div class="quiz-card">
         <i class="fa-duotone fa-gun-squirt"></i>
         <h1>${name}</h1>
-        <a href="/views/attemptQuiz/${id}">Attemp Quiz</a>
+        <a href="/api/quizzes/${id}">Attemp Quiz</a>
       </div>
 `)};
 
