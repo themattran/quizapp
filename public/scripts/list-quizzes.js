@@ -1,18 +1,5 @@
 $(document).ready(function() {
   //event listener for attempt quiz link
-  $(document).on('click', '.attempt-link', function (e) {
-    e.preventDefault();
-    console.log($(this)[0].id);
-    $.ajax({
-      method: "GET",
-      url: `/api/quizzes/${$(this)[0].id}`
-    }).done((res) => {
-      console.log(res);
-      renderQuizAttempt(attemptQuizElement(res));
-      //unclear how to switch view from here
-      switchToView("attempt-quiz");
-    });
-  });
 
   $.ajax({
         method: "GET",
@@ -43,29 +30,4 @@ const quizCard = (name, id) => {
 `)};
 
 //Function that returns interactable quiz element
-const attemptQuizElement = (quizObj) => {
-  let quizElement = `<div id="quiz-title" class="container">${quizObj.name}</div>`
-  for (let q of quizObj.questions) {
-    quizElement +=
-      `<article class="container">
-        <div class="question-content">
-          ${q.questionString}
-        </div>
-        <div class="options-container">`;
-        for (let o of q.options) {
-          o.isCorrect ? quizElement += `<button class="each-option correct">${o.content}</button>` : quizElement += `<button class="each-option">${o.content}</button>`;
-        }
-    quizElement +=
-    `</div>
-    </article>`;
-  }
-  return quizElement;
-  }
-
-//appending element returned by attemptQuizElement to the #attempt-quiz section
- const renderQuizAttempt = function (quiz) {
-   $("#attempt-quiz").empty();
-   $("#attempt-quiz").append(quiz);
-   $("#attempt-quiz").append('<button class="container" id="submit-attempt">Submit and show my score!</button>');
- }
 
