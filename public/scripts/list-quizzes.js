@@ -12,16 +12,17 @@ $(document).ready(function() {
         method: "GET",
         url: "/api/quizzes?limit=4&orderBy=random"
       }).done((res) => {
-        console.log('quizzes', res);
-        renderQuizzes(res.quizzes);
+        console.log('res', res);
+        renderQuizzes(res);
    });
 });
 
 //Function that renders quizzes and appends database questions to main container
 const renderQuizzes = function(quizzes) {
   // $("#list-quizzes").empty();
+  console.log('quizzes', quizzes);
   for (const quiz of quizzes) {
-     $('list-quizzes').append(quizCard(quiz.name, quiz.id));
+     $('#list-quizzes').append(quizCard(quiz.name, quiz.id));
   };
 }
 

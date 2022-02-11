@@ -1,7 +1,7 @@
 $card-hover-color: #546F84;
 $brand-blue: #5C9CCD;
 $brand-black: #1B2832;
-#home-list-quizzes {
+#list-quizzes {
   display: grid;
   align-items: center;
   padding: 1rem;
@@ -16,7 +16,7 @@ $brand-black: #1B2832;
 //   display: flex;
 //   flex-direction: column;
 // }
-#home-add-quiz {
+#add-quiz {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,14 +30,14 @@ $brand-black: #1B2832;
   margin: 2rem;
   transition: all 0.25s ease-out;
 }
-#home-add-quiz h1{
+#add-quiz h1{
   color: $brand-black;
 }
 #plus-icon {
   color: $brand-black;
   font-size: 4em;
 }
-#home-add-quiz:hover {
+#add-quiz:hover {
   background-color: $brand-blue;
   transition: all 0.25s ease-in;
 }
