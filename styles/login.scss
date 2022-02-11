@@ -1,0 +1,17 @@
+@import "https://unpkg.com/open-props/animations.min.css";
+
+#login-container {
+  margin-top: 9em;
+  padding-top: 4.5em;
+  display: flex;
+  justify-content: space-between;
+}
+
+#login-inputs {
+  width: 45%;
+}
+
+#static-example {
+  margin: 0px;
+  margin-left: 2em;
+}
