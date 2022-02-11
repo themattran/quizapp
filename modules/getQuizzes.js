@@ -7,6 +7,7 @@
   options.limit = (integer)   Limit the number of returned records
   options.orderBy = latest    Newest first (highest ID)
   options.orderBy = random    Randomize the order of returned records
+  options.isPublic = (bool)   If set, return only quizzes that match the flag
 
 */
 
@@ -29,6 +30,12 @@ const assembleSelectQuery = (options) => {
   //Get quizzes that belong to user with userId
   if (options && options.userId > 0) {
     queryString += ` AND user_id = ${options.userId}`;
+  }
+  //Filter by visibility
+  if (options && typeof options.isPublic === 'boolean') {
+    let val;
+    options.isPublic ? val = true : val = false;
+    queryString += ` AND is_public = ${val}`;
   }
   //Ordering options
   if (options && options.orderBy) {
