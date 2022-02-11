@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  //event listener for attempt quiz link
   $(document).on('click', '.attempt-link', function (e) {
     e.preventDefault();
     console.log($(this)[0].id);
@@ -8,6 +9,7 @@ $(document).ready(function() {
     }).done((res) => {
       console.log(res);
       renderQuizAttempt(attemptQuizElement(res));
+      //unclear how to switch view from here
     });
   });
 
