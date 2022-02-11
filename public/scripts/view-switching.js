@@ -97,7 +97,13 @@ $(document).ready(function() {
   });
 
   /**
-   * Start with home screen (list-quizzes)
+   * If an ID for a quiz to be attempted is present, render attempt-quiz accordingly.
+   * Otherwise start with the home screen (list-quizzes)
    */
-  switchToView('list-quizzes');
+  if (typeof attemptQuizId !== 'undefined' && attemptQuizId > 0) {
+    switchToView('attempt-quiz', attemptQuizId);
+  } else {
+    switchToView('list-quizzes');
+  }
+
 });
