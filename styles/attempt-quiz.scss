@@ -10,20 +10,25 @@
   color: #ae4536;
   overflow-wrap: break-word;
   font-family: 'Righteous', cursive;
-  font-size: 75px;
+  font-size: 45px;
+  margin-top: 2em;
 }
 
-#question-content {
+.question-content {
   font-size: 30px;
   font-family: 'Righteous', cursive;
   text-align: center;
 }
 
-#options-container {
+.options-container {
   margin-top: 3em;
 }
 
-#each-option {
+.each-option {
   background-color: #780b00;
   color: white;
+}
+
+.unselected {
+  background-color: #383838;
 }
