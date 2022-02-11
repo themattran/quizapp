@@ -119,6 +119,13 @@
   <section id="attempt-quiz" class="container">
   </section>
 
+  <!-- Server will render javascript to define attemptQuizId if user has visited the /attempt/quiz/:id route -->
+  <% if (typeof attemptQuizId === 'number') { %>
+    <script>
+    const attemptQuizId = <%- attemptQuizId; %>
+    </script>
+  <% } %>
+
 </body>
 
 </html>
