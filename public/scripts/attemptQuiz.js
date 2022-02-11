@@ -21,7 +21,7 @@ const attemptQuizElement = (quizObj) => {
   }
 
  const renderQuizAttempt = function (quiz) {
-   $("#my-quizzes").append(quiz);
+   $("#attempt-quiz").append(quiz);
  }
 
  $(document).ready(function() {
@@ -30,7 +30,6 @@ const attemptQuizElement = (quizObj) => {
       method: "GET",
       url: "/api/quizzes/3"
     }).done((res) => {
-      console.log(res)
       renderQuizAttempt(attemptQuizElement(res));
     });
   });
