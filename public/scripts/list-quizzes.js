@@ -53,9 +53,12 @@ const attemptQuizElement = (quizObj) => {
         <div id="options-container">`;
         for (let o of q.options) {
           quizElement += 
-          `<button id="each-option">
+          `<button class="each-option">
             ${o.content}
           </button>`
+          if (o.isCorrect) {
+            
+          } 
         }
     quizElement += 
     `</div>
