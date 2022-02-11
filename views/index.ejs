@@ -20,6 +20,7 @@
   <script type="text/javascript" src="/scripts/view-switching.js"></script>
   <script type="text/javascript" src="/scripts/login.js"></script>
   <script type="text/javascript" src="/scripts/createQuiz.js"></script>
+  <script type="text/javascript" src="/scripts/attemptQuiz.js"></script>
   <script type="text/javascript" src="/scripts/list-quizzes.js"></script>
 </head>
 
@@ -78,52 +79,7 @@
         </div>
     </article>
   </section>
-  <% 
-  let quizObj = {
-    "name": "Third quiz",
-    "questions": [
-      {
-        "question_string": "who is president in Ukraine?",
-        "options": [
-          {
-            "content": "Volodymyr Zelensky",
-            "is_correct": true
-          },
-          {
-            "content": "Joe Biden",
-            "is_correct": false
-          },
-          {
-            "content": "Vladimir Putin",
-            "is_correct": false
-          }
-        ]
-      },
-      {
-        "question_string": "who is president in the US?",
-        "options": [
-          {
-            "content": "Volodymyr Zelensky",
-            "is_correct": false
-          },
-          {
-            "content": "Donald Trump",
-            "is_correct": false
-          },
-          {
-            "content": "Joe Biden",
-            "is_correct": true
-          },
-          {
-            "content": "Vladimir Putin",
-            "is_correct": false
-          }
-        ]
-      }
-    ]
-  };
-  
-%>
+ 
 
  <section id="my-quizzes"></section>
 
@@ -160,23 +116,6 @@
 
 
   <section id="attempt-quiz" class="container">
-    <div id="quiz-title">
-     <%= quizObj.name %>
-    </div>
-    <% for (let q of quizObj.questions) { %>
-      <article>
-        <div id="question-content">
-          <%= q.question_string %>
-        </div>
-        <div id="options-container">
-        <% for (let o of q.options) { %>
-          <button id="each-option">
-            <%= o.content %>
-          </button>
-        <% } %>
-        </div>
-      </article>
-      <% } %>
   </section>
 
 </body>
