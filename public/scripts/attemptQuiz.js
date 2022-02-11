@@ -6,4 +6,9 @@ $(document).ready(function() {
     $(this).siblings().addClass("unselected")
     $(this).addClass("selected");
   });
+
+  $(document).on('click', '#submit-attempt', function (e) {
+    console.log(Array.isArray($(this).siblings()));
+  });
 });
+

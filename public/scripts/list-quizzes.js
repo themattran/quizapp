@@ -65,5 +65,6 @@ const attemptQuizElement = (quizObj) => {
  const renderQuizAttempt = function (quiz) {
    $("#my-quizzes").empty();
    $("#my-quizzes").append(quiz);
+   $("#my-quizzes").append('<button class="container" id="submit-attempt">Submit and show my score!</button>');
  }
 
