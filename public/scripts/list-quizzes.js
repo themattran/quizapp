@@ -6,7 +6,7 @@
   //Retrieve the quizzes to list
   $.ajax({
     method: "GET",
-    url: "/api/quizzes?limit=4&orderBy=random"
+    url: "/api/quizzes?limit=20&orderBy=random"
   }).done((res) => {
     renderQuizzes(res);
   });
