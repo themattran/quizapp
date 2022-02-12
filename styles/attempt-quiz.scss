@@ -30,6 +30,12 @@
 .each-option {
   background-color: #780b00;
   color: white;
+  width: 65%;
+  margin-top: 1em;
+}
+
+.each-option:hover {
+  box-shadow: yellow;
 }
 
 .unselected {
