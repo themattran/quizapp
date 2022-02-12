@@ -1,4 +1,10 @@
-INSERT INTO quizzes (id, name, user_id, is_public) VALUES (1, 'Vancouver Mountains', 1, true);
-INSERT INTO quizzes (id, name, user_id, is_public) VALUES (2, 'Binary Numbers', 1, true);
-INSERT INTO quizzes (id, name, user_id, is_public) VALUES (3, 'Javascript', 1, true);
-INSERT INTO quizzes (id, name, user_id, is_public) VALUES (4, 'City of Vancouver', 2, true);
+INSERT INTO quizzes (name,user_id) VALUES ('contain meal characteristic weapon',3);
+INSERT INTO quizzes (name,user_id) VALUES ('entitlement fax glide finger',2);
+INSERT INTO quizzes (name,user_id) VALUES ('number comprehensive advocate column',2);
+INSERT INTO quizzes (name,user_id) VALUES ('elite ethics bet assignment',3);
+INSERT INTO quizzes (name,user_id) VALUES ('advantage fuel spit collection',5);
+INSERT INTO quizzes (name,user_id) VALUES ('hypnothize cat option railcar',2);
+INSERT INTO quizzes (name,user_id) VALUES ('fax directory humanity insistence',5);
+INSERT INTO quizzes (name,user_id) VALUES ('means ethics outfit protect',4);
+INSERT INTO quizzes (name,user_id) VALUES ('remark weapon leg hotdog',1);
+INSERT INTO quizzes (name,user_id) VALUES ('command tribe borrow unfortunate',3);

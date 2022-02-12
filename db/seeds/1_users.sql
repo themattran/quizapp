@@ -1,2 +1,5 @@
-INSERT INTO users (id, name) VALUES (1, 'Lucas');
-INSERT INTO users (id, name) VALUES (2, 'Matt');
+INSERT INTO users (name) VALUES ('Lilianna Everett');
+INSERT INTO users (name) VALUES ('Janae Christensen');
+INSERT INTO users (name) VALUES ('Allie Koch');
+INSERT INTO users (name) VALUES ('Jade Neal');
+INSERT INTO users (name) VALUES ('Tristan Pacheco');
