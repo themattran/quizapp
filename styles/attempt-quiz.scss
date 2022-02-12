@@ -44,8 +44,22 @@
   justify-content: flex-start;
   align-items: center;
   padding-top: 0.5em;
+  padding-bottom: 0.5em;
   .score-content {
+    color: #383838;
     width: 80%;
     background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+}
+
+.gif {
+  padding-top: 1em;
+}
+
+.icons {
+  color: white;
+  font-size: large;
 }
