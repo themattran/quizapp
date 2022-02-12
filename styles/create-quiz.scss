@@ -21,6 +21,7 @@
   font-family: 'Righteous', cursive;
   font-size: 50px;
   height: 4em; 
+  margin-top: 0.5em;
 }
 
 #new-quiz-question {
@@ -55,13 +56,17 @@ fieldset {
 #question-option-container {
   padding-top: 2em;
   padding-bottom: 0;
-  margin-bottom: 20px;
-  margin-top: 10px;
+  margin: 3em;
 }
 
+#options-target {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
 .save-button {
   width: 28%;
   padding: 8px 5px;
+  margin-bottom: 1em;
 }
 
 .button-flex {

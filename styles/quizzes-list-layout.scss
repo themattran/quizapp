@@ -7,6 +7,7 @@ $brand-black: #1B2832;
   padding: 1rem;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
+  margin-bottom: 0px;
 }
 // .column-one {
 //   display: flex;
@@ -46,6 +47,9 @@ $brand-black: #1B2832;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  border-style: solid;
+  border-width: medium;
+  border-color: #ae4536;
   border-radius: 2%;
   box-shadow: 0px 1px 34px 0px rgba(0,0,0,0.10);
   -webkit-box-shadow: 0px 1px 34px 0px rgba(0,0,0,0.10);
@@ -55,11 +59,13 @@ $brand-black: #1B2832;
   margin: 2rem;
   transition: all 0.25s ease-out;
   grid-column: 1 span;
+  background-color: white;
 }
 .quiz-card h1{
-  color: $brand-black
+  color: $brand-black;
+  font-family: 'Righteous', cursive;
 }
 .quiz-card:hover {
-  background-color: $card-hover-color;
+  background-color: #ae4536;
   transition: all 0.25s ease-in;
 }

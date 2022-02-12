@@ -75,7 +75,7 @@ const scoreElement = (score) => {
   }
   return `<div>
   <article class="container score-container">
-  You got ${score.score} questions correct!
+  <div class="score-text">You got ${score.score} questions correct!</div>
   <img src="${url}" class="gif">
   <div class="icons">
     <i class="fa-solid fa-link"></i>
@@ -120,6 +120,7 @@ $(document).ready(function() {
   $("#attempt-quiz").on('click', '#submit-attempt', function() {
     let score = scoreQuiz();
     console.log(score);
+    window.scrollTo(0,document.body.scrollHeight);
     $(this).hide();
     $(this).parent().append(scoreElement(score));
   });
