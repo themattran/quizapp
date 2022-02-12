@@ -7,6 +7,7 @@ $brand-black: #1B2832;
   padding: 1rem;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
+  margin-bottom: 0px;
 }
 // .column-one {
 //   display: flex;
@@ -55,6 +56,7 @@ $brand-black: #1B2832;
   margin: 2rem;
   transition: all 0.25s ease-out;
   grid-column: 1 span;
+  background-color: white;
 }
 .quiz-card h1{
   color: $brand-black
