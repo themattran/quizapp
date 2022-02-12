@@ -8,7 +8,7 @@ const attemptQuizInit = (initOptions) => {
     method: "GET",
     url: `/api/quizzes/${initOptions.quizId}`
   }).done((res) => {
-    renderQuizAttempt(attemptQuizElement(res));
+    renderQuizAttempt(attemptQuizElement(res), res);
   });
 }
 
@@ -85,22 +85,10 @@ const scoreElement = (score) => {
   </div>`
 };
 
-const copyText = function() {
-  let text = $(".score-container").text().trim().slice(0, 29);
-  navigator.clipboard.writeText(text)
-  .then(() => {
-    console.log(text);
-  })
-  .catch(err => {
-    console.log('Something went wrong', err);
-  });
-
-}
-
 
 //appending element returned by attemptQuizElement to the #attempt-quiz section
- const renderQuizAttempt = function (quiz) {
-   $("#attempt-quiz").empty();
+ const renderQuizAttempt = function (quiz, quizRecord) {
+   $("#attempt-quiz").empty().append(`<span id="quiz-record" data-id="${quizRecord.id}" data-name="${quizRecord.name}"></span>`);
    $("#attempt-quiz").append(quiz);
    $("#attempt-quiz").append('<button class="container" id="submit-attempt">Submit and show my score!</button>');
  }
@@ -119,15 +107,16 @@ $(document).ready(function() {
    */
   $("#attempt-quiz").on('click', '#submit-attempt', function() {
     let score = scoreQuiz();
-    console.log(score);
-    window.scrollTo(0,document.body.scrollHeight);
     $(this).hide();
     $(this).parent().append(scoreElement(score));
+    window.scrollTo(0,document.body.scrollHeight);
   });
 
   $("#attempt-quiz").on('click', '.icons', function() {
-    console.log("pls")
-    copyText();
+    let scoreText = $(".score-container").text().trim().slice(0, 29);
+    const quizTitle = $("#quiz-record").attr("data-name");
+    const shareText = `My result on ${quizTitle}: ${scoreText}`;
+    copyText(shareText);
   });
 
 });
