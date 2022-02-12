@@ -1,38 +1,56 @@
+/**
+ * Initialization function that will be called from the view switcher, whenever the view is requested
+ * @param {object} initOptions An object with init options - get passed from the view switcher
+ */
+ const myListQuizzesInit = (initOptions) => {
+  //Retrieve the quizzes to list
+  $.ajax({
+    method: "GET",
+    url: "/api/quizzes/myquizzes"
+  }).done((res) => {
+    renderMyQuizzes(res);
+  });
+};
 
+//Register the init function
+initStore.storeInitializer("my-quizzes", myListQuizzesInit);
 $(document).ready(function() {
   //event listener for attempt quiz link
   $(document).on('click', '.my-attempt-link', function (e) {
     e.preventDefault();
     const quizId = $(this)[0].id;
     console.log("Attempt Quiz ID", quizId);
-    switchToView('attempt-quiz', {quizId}); 
+    switchToView('attempt-quiz', {quizId});
   });
 
   //Unlist Route checkout +
-  $(document).on('click', '#is-public', function (e) {
+  $(document).on('click', '.public-checkbox', function (e) {
     e.preventDefault();
-    console.log($(this)[0].id);
+    const quizId = $(this)[0].id.substring(6);
+    console.log('quizId2', quizId);
+    const currentState = $(this).val();
+    console.log('currentState', currentState);
+    let postfix;
+    if (!currentState) {
+      postfix = 'unlist';
+    } else {
+      postfix = 'list';
+    }
+
     $.ajax({
       method: "POST",
-      url: `/api/quizzes/33/list`
+      url: `/api/quizzes/${quizId}/${postfix}`
     }).done((res) => {
-      console.log(res);
+      $(this).prop("checked", res.is_public);
     });
   });
-
-  $.ajax({
-        method: "GET",
-        url: "/api/quizzes/myquizzes"
-      }).done((res) => {
-        renderMyQuizzes(res);
-   });
-
 });
 
 //Function that renders quizzes and appends database questions to main container
 const renderMyQuizzes = function(quizzes) {
   // $("#list-quizzes").empty();
   console.log('quizzes', quizzes);
+  $("#my-quizzes").empty();
   for (const quiz of quizzes) {
      $('#my-quizzes').append(myQuizCard(quiz.name, quiz.id));
   };
@@ -46,11 +64,9 @@ const myQuizCard = (name, id) => {
         <h1>${name}</h1>
         <a class="my-attempt-link" id="${id}">Attempt Quiz</a>
         <a class="my-share-link" id="">Share Link</a>
-        <div class= "my-option-node">
         <fieldset>
-             <input type="checkbox" id="is-public" name="correct">
+             <input type="checkbox" id="public${id}" class= "public-checkbox" name="correct">
              <span>Make Public</span>
-      </div>
 `};
 
 //Function that returns interactable quiz element

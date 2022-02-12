@@ -3,7 +3,7 @@ $brand-blue: #5C9CCD;
 $brand-black: #1B2832;
 
 #my-quizzes {
-  display: flex;
+  display: grid;
   align-items: center;
   padding: 1rem;
   grid-template-columns: 1fr 1fr;
