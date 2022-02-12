@@ -1,9 +1,9 @@
 // See: https://sass-lang.com/
 [data-theme="light"],
 :root:not([data-theme="dark"]) {
-  --primary: #8e24aa;
-  --primary-hover: #7b1fa2;
-  --primary-focus: rgba(142, 36, 170, 0.125);
+  --primary: #ae4536;
+  --primary-hover: #780b00;
+  --primary-focus: rgba(216, 27, 96, 0.125);
   --primary-inverse: #FFF;
 }
 
