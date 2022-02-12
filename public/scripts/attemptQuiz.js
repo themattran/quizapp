@@ -58,11 +58,24 @@ const attemptQuizElement = (quizObj) => {
   return quizElement;
 }
 
+const scoreElement = `    
+<div>
+<article class="container score-container">
+  You got 5/9 questions correct!
+  <img src="https://i.imgur.com/Sa75Uzg.gif" class="gif">
+  <div class="icons">
+    <i class="fa-solid fa-link"></i>
+    Share your result
+  </div>
+</article>
+</div>`;
+
 //appending element returned by attemptQuizElement to the #attempt-quiz section
  const renderQuizAttempt = function (quiz) {
    $("#attempt-quiz").empty();
    $("#attempt-quiz").append(quiz);
    $("#attempt-quiz").append('<button class="container" id="submit-attempt">Submit and show my score!</button>');
+   $("#attempt-quiz").append(scoreElement);
  }
 
 $(document).ready(function() {
@@ -81,4 +94,5 @@ $(document).ready(function() {
     console.log(scoreQuiz());
   });
 });
+
 

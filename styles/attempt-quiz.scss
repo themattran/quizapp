@@ -56,10 +56,23 @@
 }
 
 .gif {
-  padding-top: 1em;
+  padding-top: 3.5em;
 }
 
 .icons {
   color: white;
   font-size: large;
+  padding-top: 0.75em;
+  margin-right: 3em;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  i {
+    padding-right: 0.25em;
+  }
+}
+
+.icons:hover {
+  
 }
