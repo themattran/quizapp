@@ -1,3 +1,6 @@
+@import "https://unpkg.com/open-props/animations.min.css";
+@import "https://unpkg.com/open-props/easings.min.css"; 
+
 #attempt-quiz {
   width: 60%;
 }
@@ -56,7 +59,7 @@
 }
 
 .gif {
-  padding-top: 3.5em;
+  padding-top: 0.75em;
 }
 
 .icons {
@@ -69,10 +72,13 @@
   justify-content: flex-end;
   align-items: center;
   i {
-    padding-right: 0.25em;
+    padding-right: 0.35em;
   }
 }
 
 .icons:hover {
-  
+  animation: 
+  var(--animation-shake-y);
+  animation-duration: 1s;
+ padding-top: 0.5em;
 }
