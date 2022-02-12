@@ -1,100 +1,39 @@
-INSERT INTO quizzes (name,user_id) VALUES ('weapon application withdraw meal',13);
-INSERT INTO quizzes (name,user_id) VALUES ('grief official suite qualified',14);
-INSERT INTO quizzes (name,user_id) VALUES ('tropical appreciate form blame',4);
-INSERT INTO quizzes (name,user_id) VALUES ('evaluate evaluate cow gift',9);
-INSERT INTO quizzes (name,user_id) VALUES ('Mars creation coalition comprehensive',1);
-INSERT INTO quizzes (name,user_id) VALUES ('urine withdraw computer reserve',6);
-INSERT INTO quizzes (name,user_id) VALUES ('debate drive tropical suite',19);
-INSERT INTO quizzes (name,user_id) VALUES ('withdraw solve spit elbow',19);
-INSERT INTO quizzes (name,user_id) VALUES ('rob belong wind father',6);
-INSERT INTO quizzes (name,user_id) VALUES ('star digital computer opponent',14);
-INSERT INTO quizzes (name,user_id) VALUES ('deliver fault stake response',7);
-INSERT INTO quizzes (name,user_id) VALUES ('steam hypnothize official cow',13);
-INSERT INTO quizzes (name,user_id) VALUES ('fuel thank south density',13);
-INSERT INTO quizzes (name,user_id) VALUES ('unaware color-blind available fear',8);
-INSERT INTO quizzes (name,user_id) VALUES ('form throne decrease disturbance',19);
-INSERT INTO quizzes (name,user_id) VALUES ('digital stake cheap creation',16);
-INSERT INTO quizzes (name,user_id) VALUES ('gutter canvas gift agent',10);
-INSERT INTO quizzes (name,user_id) VALUES ('innocent evaluate damn glide',11);
-INSERT INTO quizzes (name,user_id) VALUES ('banner agent insistence misplace',18);
-INSERT INTO quizzes (name,user_id) VALUES ('cow banana weapon concentration',5);
-INSERT INTO quizzes (name,user_id) VALUES ('cat cat frog exclusive',16);
-INSERT INTO quizzes (name,user_id) VALUES ('south track bet advantage',1);
-INSERT INTO quizzes (name,user_id) VALUES ('suite bet available wardrobe',5);
-INSERT INTO quizzes (name,user_id) VALUES ('damn dignity qualified available',17);
-INSERT INTO quizzes (name,user_id) VALUES ('redeem vegetarian stake disk',8);
-INSERT INTO quizzes (name,user_id) VALUES ('redeem appreciate fuel gradient',12);
-INSERT INTO quizzes (name,user_id) VALUES ('bet wardrobe evaluate concentration',3);
-INSERT INTO quizzes (name,user_id) VALUES ('disk perforate leg call',10);
-INSERT INTO quizzes (name,user_id) VALUES ('collection language debate color-blind',20);
-INSERT INTO quizzes (name,user_id) VALUES ('outfit application exclusive charismatic',8);
-INSERT INTO quizzes (name,user_id) VALUES ('railcar frog means computer',3);
-INSERT INTO quizzes (name,user_id) VALUES ('official solution throne insight',4);
-INSERT INTO quizzes (name,user_id) VALUES ('fault voter father deliver',19);
-INSERT INTO quizzes (name,user_id) VALUES ('decade application canvas frog',2);
-INSERT INTO quizzes (name,user_id) VALUES ('biscuit unfortunate thank insistence',11);
-INSERT INTO quizzes (name,user_id) VALUES ('cow elite misplace small',16);
-INSERT INTO quizzes (name,user_id) VALUES ('world gravel fuel sand',14);
-INSERT INTO quizzes (name,user_id) VALUES ('score skip advantage corruption',10);
-INSERT INTO quizzes (name,user_id) VALUES ('gradient call star bracket',15);
-INSERT INTO quizzes (name,user_id) VALUES ('gutter wardrobe remark entitlement',10);
-INSERT INTO quizzes (name,user_id) VALUES ('clerk mastermind number vague',11);
-INSERT INTO quizzes (name,user_id) VALUES ('banner shareholder color-blind pop',7);
-INSERT INTO quizzes (name,user_id) VALUES ('qualified entitlement sand fill',20);
-INSERT INTO quizzes (name,user_id) VALUES ('penny rob friendly blast',16);
-INSERT INTO quizzes (name,user_id) VALUES ('clerk comprehensive collection decade',15);
-INSERT INTO quizzes (name,user_id) VALUES ('reserve protect color-blind debate',6);
-INSERT INTO quizzes (name,user_id) VALUES ('ceiling finance tropical available',8);
-INSERT INTO quizzes (name,user_id) VALUES ('drive belong computer protect',16);
-INSERT INTO quizzes (name,user_id) VALUES ('close fuel concentration elite',2);
-INSERT INTO quizzes (name,user_id) VALUES ('unaware creation mastermind text',5);
-INSERT INTO quizzes (name,user_id) VALUES ('clear senior word ethics',10);
-INSERT INTO quizzes (name,user_id) VALUES ('room extort fill transport',19);
-INSERT INTO quizzes (name,user_id) VALUES ('affair grief borrow fill',14);
-INSERT INTO quizzes (name,user_id) VALUES ('drive excavation vague consultation',19);
-INSERT INTO quizzes (name,user_id) VALUES ('deliver computer maze biscuit',14);
-INSERT INTO quizzes (name,user_id) VALUES ('outfit fluctuation clear characteristic',5);
-INSERT INTO quizzes (name,user_id) VALUES ('Mars link comprehensive decade',4);
-INSERT INTO quizzes (name,user_id) VALUES ('thank cheap deliver fuel',7);
-INSERT INTO quizzes (name,user_id) VALUES ('protect perform evaluate grief',18);
-INSERT INTO quizzes (name,user_id) VALUES ('fault skip option text',15);
-INSERT INTO quizzes (name,user_id) VALUES ('rob necklace frog charismatic',15);
-INSERT INTO quizzes (name,user_id) VALUES ('tropical die dismiss penny',15);
-INSERT INTO quizzes (name,user_id) VALUES ('gradient thoughtful transport command',4);
-INSERT INTO quizzes (name,user_id) VALUES ('disk exclusive science extort',16);
-INSERT INTO quizzes (name,user_id) VALUES ('father concentration gravel track',3);
-INSERT INTO quizzes (name,user_id) VALUES ('agent official extort band',10);
-INSERT INTO quizzes (name,user_id) VALUES ('drift charismatic clear biscuit',9);
-INSERT INTO quizzes (name,user_id) VALUES ('glide perforate dismiss ecstasy',12);
-INSERT INTO quizzes (name,user_id) VALUES ('color-blind contain transport scandal',19);
-INSERT INTO quizzes (name,user_id) VALUES ('canvas prediction biscuit solution',10);
-INSERT INTO quizzes (name,user_id) VALUES ('topple tidy tidy track',17);
-INSERT INTO quizzes (name,user_id) VALUES ('spit artist final bracket',14);
-INSERT INTO quizzes (name,user_id) VALUES ('theater entitlement scandal fault',12);
-INSERT INTO quizzes (name,user_id) VALUES ('option weapon tidy column',5);
-INSERT INTO quizzes (name,user_id) VALUES ('charismatic south call elite',16);
-INSERT INTO quizzes (name,user_id) VALUES ('drift evaluate marathon computer',15);
-INSERT INTO quizzes (name,user_id) VALUES ('ethics perform spit suite',9);
-INSERT INTO quizzes (name,user_id) VALUES ('entitlement artist language strip',2);
-INSERT INTO quizzes (name,user_id) VALUES ('cheap dignity bracket fuel',2);
-INSERT INTO quizzes (name,user_id) VALUES ('science theater coalition friendly',7);
-INSERT INTO quizzes (name,user_id) VALUES ('queen sequence gift text',9);
-INSERT INTO quizzes (name,user_id) VALUES ('gravel punch leg fault',12);
-INSERT INTO quizzes (name,user_id) VALUES ('color-blind available harmony steam',7);
-INSERT INTO quizzes (name,user_id) VALUES ('bet flood charismatic track',15);
-INSERT INTO quizzes (name,user_id) VALUES ('decrease dismiss gift debate',2);
-INSERT INTO quizzes (name,user_id) VALUES ('star prediction cat banana',3);
-INSERT INTO quizzes (name,user_id) VALUES ('room finger damn number',19);
-INSERT INTO quizzes (name,user_id) VALUES ('number word decrease bet',12);
-INSERT INTO quizzes (name,user_id) VALUES ('sand plant theater application',7);
-INSERT INTO quizzes (name,user_id) VALUES ('shareholder penny dismiss density',16);
-INSERT INTO quizzes (name,user_id) VALUES ('flood punch humanity qualified',9);
-INSERT INTO quizzes (name,user_id) VALUES ('mastermind coalition humanity belong',19);
-INSERT INTO quizzes (name,user_id) VALUES ('affair marathon track wind',10);
-INSERT INTO quizzes (name,user_id) VALUES ('vegetarian vegetation topple friendly',12);
-INSERT INTO quizzes (name,user_id) VALUES ('advice moving throne solution',17);
-INSERT INTO quizzes (name,user_id) VALUES ('unfortunate flood celebration punch',6);
-INSERT INTO quizzes (name,user_id) VALUES ('bracket bracket room ceiling',10);
-INSERT INTO quizzes (name,user_id) VALUES ('outfit copper tropical snub',8);
-INSERT INTO quizzes (name,user_id) VALUES ('policy exclusive flood command',14);
-INSERT INTO quizzes (name,user_id) VALUES ('appreciate skip text blame',18);
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 14.1
+-- Dumped by pg_dump version 14.1
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- Data for Name: quizzes; Type: TABLE DATA; Schema: public; Owner: labber
+--
+
+INSERT INTO public.quizzes (id, name, user_id, is_public) VALUES (1, 'Vancouver Mountains', 1, true);
+INSERT INTO public.quizzes (id, name, user_id, is_public) VALUES (2, 'Binary Numbers', 1, true);
+INSERT INTO public.quizzes (id, name, user_id, is_public) VALUES (3, 'Javascript', 1, true);
+INSERT INTO public.quizzes (id, name, user_id, is_public) VALUES (4, 'City of Vancouver', 2, true);
+
+
+--
+-- Name: quizzes_id_seq; Type: SEQUENCE SET; Schema: public; Owner: labber
+--
+
+SELECT pg_catalog.setval('public.quizzes_id_seq', 4, true);
+
+
+--
+-- PostgreSQL database dump complete
+--
+

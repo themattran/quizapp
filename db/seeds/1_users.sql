@@ -1,20 +1,37 @@
-INSERT INTO users (name) VALUES ('Lilianna Everett');
-INSERT INTO users (name) VALUES ('Janae Christensen');
-INSERT INTO users (name) VALUES ('Allie Koch');
-INSERT INTO users (name) VALUES ('Jade Neal');
-INSERT INTO users (name) VALUES ('Tristan Pacheco');
-INSERT INTO users (name) VALUES ('Marlie Savage');
-INSERT INTO users (name) VALUES ('Hailee Watkins');
-INSERT INTO users (name) VALUES ('Amber Baker');
-INSERT INTO users (name) VALUES ('Maximillian Castaneda');
-INSERT INTO users (name) VALUES ('Jamie Williams');
-INSERT INTO users (name) VALUES ('Corbin Ali');
-INSERT INTO users (name) VALUES ('Talon Cunningham');
-INSERT INTO users (name) VALUES ('Perla Vincent');
-INSERT INTO users (name) VALUES ('Camila Booker');
-INSERT INTO users (name) VALUES ('Tania Hood');
-INSERT INTO users (name) VALUES ('Alaina Dougherty');
-INSERT INTO users (name) VALUES ('Serenity Paul');
-INSERT INTO users (name) VALUES ('Araceli Flores');
-INSERT INTO users (name) VALUES ('Hayden Carlson');
-INSERT INTO users (name) VALUES ('Kylan Huff');
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 14.1
+-- Dumped by pg_dump version 14.1
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: labber
+--
+
+INSERT INTO public.users (id, name) VALUES (1, 'Johannes');
+INSERT INTO public.users (id, name) VALUES (2, 'Matt');
+
+
+--
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: labber
+--
+
+SELECT pg_catalog.setval('public.users_id_seq', 2, true);
+
+
+--
+-- PostgreSQL database dump complete
+--
+
