@@ -14,6 +14,7 @@
 
 //Register the init function
 initStore.storeInitializer("my-quizzes", myListQuizzesInit);
+
 $(document).ready(function() {
   //event listener for attempt quiz link
   $(document).on('click', '.my-attempt-link', function (e) {
@@ -23,13 +24,10 @@ $(document).ready(function() {
     switchToView('attempt-quiz', {quizId});
   });
 
-  //Unlist Route checkout +
+  //Even listener for list/unlist quiz as public
   $(document).on('click', '.public-checkbox', function (e) {
-    e.preventDefault();
     const quizId = $(this)[0].id.substring(6);
-    console.log('quizId2', quizId);
-    const currentState = $(this).val();
-    console.log('currentState', currentState);
+    const currentState = $(this).prop("checked");
     let postfix;
     if (!currentState) {
       postfix = 'unlist';
@@ -43,6 +41,7 @@ $(document).ready(function() {
     }).done((res) => {
       $(this).prop("checked", res.is_public);
     });
+
   });
 });
 
@@ -51,21 +50,23 @@ const renderMyQuizzes = function(quizzes) {
   // $("#list-quizzes").empty();
   console.log('quizzes', quizzes);
   $("#my-quizzes").empty();
-  for (const quiz of quizzes) {
-     $('#my-quizzes').append(myQuizCard(quiz.name, quiz.id));
+  for (const quizRecord of quizzes) {
+     $('#my-quizzes').append(myQuizCard(quizRecord));
   };
 }
 
 //Function that returns quiz card element
-const myQuizCard = (name, id) => {
+const myQuizCard = (quizRecord) => {
+  let checked;
+  quizRecord.is_public ? checked = "CHECKED" : checked = "";
   return `
 <div class="my-quiz-card">
         <i class="fa-duotone fa-gun-squirt"></i>
-        <h1>${name}</h1>
-        <a class="my-attempt-link" id="${id}">Attempt Quiz</a>
+        <h1>${quizRecord.name}</h1>
+        <a class="my-attempt-link" id="${quizRecord.id}">Attempt Quiz</a>
         <a class="my-share-link" id="">Share Link</a>
         <fieldset>
-             <input type="checkbox" id="public${id}" class= "public-checkbox" name="correct">
+             <input type="checkbox" ${checked} id="public${quizRecord.id}" class= "public-checkbox" name="correct">
              <span>Make Public</span>
 `};
 
