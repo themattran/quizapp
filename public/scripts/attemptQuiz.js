@@ -85,6 +85,19 @@ const scoreElement = (score) => {
   </div>`
 };
 
+const copyText = function() {
+  let text = $(".score-container").text().trim().slice(0, 29);
+  navigator.clipboard.writeText(text)
+  .then(() => {
+    console.log(text);
+  })
+  .catch(err => {
+    console.log('Something went wrong', err);
+  });
+
+}
+
+
 //appending element returned by attemptQuizElement to the #attempt-quiz section
  const renderQuizAttempt = function (quiz) {
    $("#attempt-quiz").empty();
@@ -110,6 +123,10 @@ $(document).ready(function() {
     $(this).hide();
     $(this).parent().append(scoreElement(score));
   });
+
+  $("#attempt-quiz").on('click', '.icons', function() {
+    console.log("pls")
+    copyText();
+  });
+
 });
-
-
