@@ -37,10 +37,9 @@ const renderQuizzes = function(quizzes) {
 //Function that returns quiz card element
 const quizCard = (name, id) => {
   return $(`
-<div class="quiz-card">
+<div id="${id}" class="quiz-card attempt-link">
         <i class="fa-duotone fa-gun-squirt"></i>
         <h1>${name}</h1>
-        <a class="attempt-link" id="${id}">Attempt Quiz</a>
       </div>
 `)};
 
