@@ -63,7 +63,11 @@ const retrieveQuizRecord = (db, quizId) => {
 
     db.query(queryString)
       .then(res => {
-        resolve(res.rows[0]);
+        if (res.rows.length) {
+          resolve(res.rows[0]);
+        } else {
+          reject({error: "quiz does not exist"});
+        }
       })
       .catch(err => {
         reject(err);
@@ -163,6 +167,9 @@ const retrieveQuiz = (db, quizId) => {
             }
             return resolve(quizObject);
           });
+      })
+      .catch(err => {
+        reject(err);
       });
   });
 };

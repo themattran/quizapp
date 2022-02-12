@@ -58,7 +58,7 @@ module.exports = (db) => {
     retrieveQuiz(db, req.params.id).then(quizObject => {
       res.json(quizObject);
     }).catch(err => {
-      res.status(500).json({error: err.message});
+      res.status(500).json(err);
     });
   });
 

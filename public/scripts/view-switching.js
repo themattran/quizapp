@@ -14,6 +14,7 @@ const makeInitStore = () => {
    * @param {function} initFunction an initialization function for this view
    */
   const storeInitializer = (viewname, initFunction) => {
+    console.log(`Storing init function for view ${viewname}`);
     initFunctions[viewname] = initFunction;
   };
 
@@ -71,6 +72,7 @@ const switchToView = (viewName, initOptions) => {
   //Retrieve and (if extant) run initialization function for the new view
   const initFunction = initStore.getInitializer(viewName);
   if (initFunction) {
+    console.log("  -executing init function");
     initFunction(initOptions);
   }
   showView(viewName);
@@ -107,7 +109,7 @@ $(document).ready(function() {
    * Otherwise start with the home screen (list-quizzes)
    */
   if (typeof attemptQuizId !== 'undefined' && attemptQuizId > 0) {
-    switchToView('attempt-quiz', { quiz_id: attemptQuizId });
+    switchToView('attempt-quiz', { quizId: attemptQuizId });
   } else {
     switchToView('list-quizzes');
   }
