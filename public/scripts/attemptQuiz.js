@@ -120,6 +120,7 @@ $(document).ready(function() {
   $("#attempt-quiz").on('click', '#submit-attempt', function() {
     let score = scoreQuiz();
     console.log(score);
+    window.scrollTo(0,document.body.scrollHeight);
     $(this).hide();
     $(this).parent().append(scoreElement(score));
   });
