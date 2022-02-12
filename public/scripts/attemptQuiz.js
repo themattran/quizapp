@@ -58,8 +58,8 @@ const attemptQuizElement = (quizObj) => {
   return quizElement;
 }
 
-const scoreElement = `    
-<div>
+const scoreElement = (score) => 
+`<div>
 <article class="container score-container">
   You got 5/9 questions correct!
   <img src="https://i.imgur.com/Sa75Uzg.gif" class="gif">
@@ -75,7 +75,6 @@ const scoreElement = `
    $("#attempt-quiz").empty();
    $("#attempt-quiz").append(quiz);
    $("#attempt-quiz").append('<button class="container" id="submit-attempt">Submit and show my score!</button>');
-   $("#attempt-quiz").append(scoreElement);
  }
 
 $(document).ready(function() {
@@ -92,6 +91,8 @@ $(document).ready(function() {
    */
   $("#attempt-quiz").on('click', '#submit-attempt', function() {
     console.log(scoreQuiz());
+    $(this).hide();
+    $(this).parent().append(scoreElement);
   });
 });
 

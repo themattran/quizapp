@@ -37,6 +37,11 @@
 }
 
 .score-container {
+  animation: 
+  var(--animation-scale-down) reverse,
+  var(--animation-fade-out) reverse;
+  animation-timing-function: var(--ease-squish-5);
+  animation-duration: 2s;
   background-color: #ae4536;
   width: 50%;
   color: white;
