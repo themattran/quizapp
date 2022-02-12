@@ -25,3 +25,17 @@
   color: white;
   margin-top: 1em;
 }
+
+.wrong:hover {
+  animation:
+  var(--animation-shake-x),
+  var(--animation-fade-out);
+  animation-timing-function: var(--ease-squish-4);
+  animation-duration: 1s;
+}
+
+.right:hover {
+  animation:
+  var(--animation-shake-y);
+  animation-duration: 1s;
+}
