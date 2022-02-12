@@ -40,6 +40,7 @@ $(document).ready(function() {
       url: `/api/quizzes/${quizId}/${postfix}`
     }).done((res) => {
       $(this).prop("checked", res.is_public);
+      console.log(`Quiz ${res.id} publicly listed: ${res.is_public}`);
     });
 
   });
