@@ -15,6 +15,9 @@ $brand-black: #1B2832;
   align-items: center;
   flex-direction: column;
   border-radius: 2%;
+  border-style: solid;
+  border-width: medium;
+  border-color: #ae4536;
   box-shadow: 0px 1px 34px 0px rgba(0,0,0,0.10);
   -webkit-box-shadow: 0px 1px 34px 0px rgba(0,0,0,0.10);
   -moz-box-shadow: 0px 1px 34px 0px rgba(0,0,0,0.10);
@@ -25,9 +28,9 @@ $brand-black: #1B2832;
   grid-column: 1 span;
 }
 .my-quiz-card h1{
-  color: $brand-black
+  color: $brand-black;
+  font-family: 'Righteous', cursive;
 }
 .my-quiz-card:hover {
-  background-color: $card-hover-color;
   transition: all 0.25s ease-in;
 }
