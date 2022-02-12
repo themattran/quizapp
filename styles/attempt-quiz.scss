@@ -32,3 +32,20 @@
 .unselected {
   background-color: #383838;
 }
+
+.score-container {
+  background-color: #ae4536;
+  width: 50%;
+  color: white;
+  font-size: xx-large;
+  font-family: 'Righteous', cursive;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 0.5em;
+  .score-content {
+    width: 80%;
+    background-color: white;
+  }
+}
