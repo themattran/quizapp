@@ -1,3 +1,6 @@
+@import "https://unpkg.com/open-props/animations.min.css";
+@import "https://unpkg.com/open-props/easings.min.css"; 
+
 #attempt-quiz {
   width: 60%;
 }
@@ -31,4 +34,56 @@
 
 .unselected {
   background-color: #383838;
+}
+
+.score-container {
+  animation: 
+  var(--animation-scale-down) reverse,
+  var(--animation-fade-out) reverse;
+  animation-timing-function: var(--ease-squish-5);
+  animation-duration: 2s;
+  background-color: #ae4536;
+  width: 50%;
+  color: white;
+  font-size: xx-large;
+  font-family: 'Righteous', cursive;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  .score-content {
+    color: #383838;
+    width: 80%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.gif {
+  padding-top: 0.75em;
+}
+
+.icons {
+  color: white;
+  font-size: large;
+  padding-top: 0.75em;
+  margin-right: 3em;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  i {
+    padding-right: 0.35em;
+  }
+}
+
+.icons:hover {
+  animation: 
+  var(--animation-shake-y);
+  animation-duration: 1s;
+ padding-top: 0.5em;
 }
