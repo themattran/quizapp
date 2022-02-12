@@ -24,7 +24,17 @@ $(document).ready(function() {
     switchToView('attempt-quiz', {quizId});
   });
 
-  //Even listener for list/unlist quiz as public
+  //Event listener for share my quiz link
+  $(document).on('click', '.my-share-link', function(e) {
+    e.preventDefault();
+    const quizId = $(this).attr("data-quiz-id");
+    const link = `${window.location.protocol}//${window.location.hostname}:${window.location.port}/attempt/quiz/${quizId}`;
+    console.log("Share Quiz ID:", quizId);
+    copyText(link);
+    $(this).text(link);
+  });
+
+  //Event listener for list/unlist quiz as public
   $(document).on('click', '.public-checkbox', function (e) {
     const quizId = $(this)[0].id.substring(6);
     const currentState = $(this).prop("checked");
@@ -65,7 +75,7 @@ const myQuizCard = (quizRecord) => {
         <i class="fa-duotone fa-gun-squirt"></i>
         <h1>${quizRecord.name}</h1>
         <a class="my-attempt-link" id="${quizRecord.id}">Attempt Quiz</a>
-        <a class="my-share-link" id="">Share Link</a>
+        <a class="my-share-link" data-quiz-id="${quizRecord.id}">Share Link</a>
         <fieldset>
              <input type="checkbox" ${checked} id="public${quizRecord.id}" class= "public-checkbox" name="correct">
              <span>Make Public</span>
